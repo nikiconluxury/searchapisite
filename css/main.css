@@ -422,53 +422,6 @@ html, body {
   font-size: 1.2rem;
 }
 
-/* Why Choose Us Section */
-.why-choose-section {
-  background-color: var(--surface);
-  padding: 4rem 2rem;
-}
-
-.why-choose-container {
-  /* Removed max-width:1000px to align with .container's max-width */
-  padding: 2rem 1rem;
-  border-radius: 8px;
-  width: 100%;
-  margin: 0 auto;
-}
-
-.why-choose-container ul {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
-  gap: 20px;
-  list-style-type: none;
-  padding: 0;
-}
-
-.why-choose-container li {
-  background-color: #f1f1f1;
-  border: 1px solid var(--primary);
-  box-shadow: 0 0 7px var(--glow);
-  border-radius: 8px;
-  padding: 2rem;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.why-choose-container li:hover {
-  background-color: var(--surface);
-  transform: translateY(-5px);
-  box-shadow: 0 0 20px var(--glow);
-}
-
-.why-choose-container li h3 {
-  color: var(--accent);
-  margin-bottom: 1rem;
-  font-size: 1.3rem;
-}
-
-.why-choose-container li p {
-  color: var(--text-secondary);
-  margin-bottom: 1.5rem;
-}
 
 /* Solutions Section */
 .solutions-content {
@@ -1604,35 +1557,46 @@ form button:hover {
   }
 }
 /* ------------------------
-   IP Rotation & Proxy Management Section
+   General Styles for New Sections
 ------------------------ */
-.ip-proxy-section {
+/* ------------------------
+   General Styles
+------------------------ */
+
+/* Section Titles */
+.section-title {
+  font-size: 2.5rem;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+/* Section Subtitles */
+.section-subtitle {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+/* ------------------------
+   General Styles
+------------------------ */
+
+/* ------------------------
+   B2B Solutions Section - Card-Based Layout
+------------------------ */
+.b2b-solutions-section {
   padding: 4rem 0;
   background-color: var(--background);
   text-align: center;
 }
 
-.ip-proxy-section .section-title {
-  margin-bottom: 2rem;
-  font-size: 2.5rem;
-  color: var(--accent);
-}
-
-.ip-proxy-section .section-subtitle {
-  margin-bottom: 3rem;
-  font-size: 1.2rem;
-  color: var(--text-secondary);
-}
-
-.ip-proxy-content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+.b2b-solutions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
+  margin-top: 2rem;
 }
 
-.ip-proxy-item {
-  flex: 1 1 30%;
+.b2b-solution-card {
   background-color: var(--surface);
   padding: 2rem;
   border-radius: 10px;
@@ -1640,68 +1604,9 @@ form button:hover {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.ip-proxy-item:hover {
+.b2b-solution-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 0 20px var(--glow);
-}
-
-.ip-proxy-icon {
-  font-size: 2rem;
-  color: var(--accent);
-  margin-bottom: 1rem;
-}
-
-.ip-proxy-item h3 {
-  font-size: 1.3rem;
-  color: var(--primary);
-  margin-bottom: 1rem;
-}
-
-.ip-proxy-item p {
-  color: var(--text-secondary);
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-/* ------------------------
-   B2B Solutions Section
------------------------- */
-.b2b-solutions-section {
-  padding: 4rem 0;
-  background-color: var(--surface);
-  text-align: center;
-}
-
-.b2b-solutions-section .section-title {
-  margin-bottom: 2rem;
-  font-size: 2.5rem;
-  color: var(--accent);
-}
-
-.b2b-solutions-section .section-subtitle {
-  margin-bottom: 3rem;
-  font-size: 1.2rem;
-  color: var(--text-secondary);
-}
-
-.b2b-solutions-content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 2rem;
-}
-
-.b2b-solution-item {
-  flex: 1 1 30%;
-  background-color: var(--background);
-  padding: 2rem;
-  border-radius: 10px;
-  transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.b2b-solution-item:hover {
-  transform: translateY(-5px);
-  background-color: var(--surface-hover);
 }
 
 .b2b-solution-icon {
@@ -1710,48 +1615,47 @@ form button:hover {
   margin-bottom: 1rem;
 }
 
-.b2b-solution-item h3 {
+.b2b-solution-card h3 {
   font-size: 1.3rem;
   color: var(--primary);
   margin-bottom: 1rem;
 }
 
-.b2b-solution-item p {
+.b2b-solution-card p {
   color: var(--text-secondary);
   font-size: 1rem;
   line-height: 1.6;
 }
 
 /* ------------------------
-   Credits Purchase & Refill Section
+   Why Choose Us Section - Zig-Zag Roadmap Layout
 ------------------------ */
-.credits-section {
+/* Why Choose Us Section - Three-Column Grid Layout */
+.why-choose-section {
   padding: 4rem 0;
   background-color: var(--background);
   text-align: center;
 }
 
-.credits-section .section-title {
-  margin-bottom: 2rem;
+.why-choose-section .section-title {
+  margin-bottom: 1rem;
   font-size: 2.5rem;
   color: var(--accent);
 }
 
-.credits-section .section-subtitle {
+.why-choose-section .section-subtitle {
   margin-bottom: 3rem;
   font-size: 1.2rem;
   color: var(--text-secondary);
 }
 
-.credits-content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+.why-choose-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
 }
 
-.credits-item {
-  flex: 1 1 30%;
+.why-choose-item {
   background-color: var(--surface);
   padding: 2rem;
   border-radius: 10px;
@@ -1759,53 +1663,337 @@ form button:hover {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.credits-item:hover {
+.why-choose-item:hover {
   transform: translateY(-5px);
   box-shadow: 0 0 20px var(--glow);
 }
 
-.credits-icon {
+.why-choose-icon {
   font-size: 2rem;
   color: var(--accent);
   margin-bottom: 1rem;
 }
 
-.credits-item h3 {
+.why-choose-item h3 {
   font-size: 1.3rem;
   color: var(--primary);
   margin-bottom: 1rem;
 }
 
-.credits-item p {
+.why-choose-item p {
   color: var(--text-secondary);
   font-size: 1rem;
   line-height: 1.6;
 }
 
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .why-choose-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+
 /* ------------------------
-   Responsive Adjustments
+   IP Rotation & Proxy Management Section
+.advanced-features-section {
+  padding: 4rem 0;
+  background-color: var(--background);
+  text-align: center;
+}
+
+.advanced-features-section .section-title {
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  color: var(--accent);
+}
+
+.advanced-features-section .section-subtitle {
+  margin-bottom: 3rem;
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+}
+
+.advanced-features-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+/* ------------------------
+   Advanced Features Section
 ------------------------ */
+.advanced-features-section {
+  padding: 4rem 0;
+  background-color: var(--background);
+  text-align: center;
+}
+
+.advanced-features-section .section-title {
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  color: var(--accent);
+}
+
+.advanced-features-section .section-subtitle {
+  margin-bottom: 3rem;
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+}
+
+.advanced-features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  background-color: var(--surface);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px var(--glow);
+}
+
+.feature-icon {
+  flex: 0 0 60px;
+  height: 60px;
+  background-color: var(--accent);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.feature-icon:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+  transform: scale(1.1);
+}
+
+.feature-content {
+  flex: 1;
+  text-align: left;
+}
+
+.feature-content h3 {
+  font-size: 1.3rem;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.feature-content p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ------------------------
+   Responsive Adjustments for Advanced Features
+------------------------ */
+@media (max-width: 768px) {
+  .feature-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .feature-icon {
+    margin-bottom: 1rem;
+  }
+
+  .feature-content {
+    text-align: center;
+  }
+}
+
+
+/* Grid Adjustments for B2B Solutions */
 @media (max-width: 992px) {
+  .b2b-solution-card,
   .ip-proxy-item,
-  .b2b-solution-item,
   .credits-item {
     flex: 1 1 45%;
   }
 }
 
+/* Full Width on Small Screens */
 @media (max-width: 768px) {
+  .b2b-solution-card,
   .ip-proxy-item,
-  .b2b-solution-item,
   .credits-item {
     flex: 1 1 100%;
   }
 
-  .features-grid,
-  .why-choose-container,
-  .ip-proxy-content,
-  .b2b-solutions-content,
-  .credits-content {
+  /* Ensure all roadmaps stack vertically */
+  .why-choose-roadmap,
+  .b2b-solutions-roadmap {
     flex-direction: column;
     align-items: center;
   }
 }
+
+/* ------------------------
+   Features Section - Accordion Layout
+------------------------ */
+.features {
+  padding: 4rem 0;
+  background-color: var(--background);
+}
+
+.features .section-title {
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  color: var(--accent);
+  text-align: center;
+}
+
+.features .section-subtitle {
+  margin-bottom: 3rem;
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+.features-accordion {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.accordion-item {
+  background-color: var(--surface);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.accordion-item:hover {
+  transform: translateY(-2px);
+}
+
+.accordion-header {
+  width: 100%;
+  padding: 1.5rem;
+  background-color: var(--accent);
+  color: #fff;
+  border: none;
+  outline: none;
+  text-align: left;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background-color 0.3s ease;
+}
+
+.accordion-header:hover {
+  background-color: #ca7128; /* Manually set darker shade */
+}
+
+.accordion-header .header-content {
+  display: flex;
+  align-items: center;
+}
+
+.accordion-header i.fas {
+  margin-right: 1rem;
+  font-size: 1.5rem; /* Adjust size as needed */
+}
+
+.accordion-header .chevron {
+  transition: transform 0.3s ease;
+}
+
+.accordion-item.active .chevron {
+  transform: rotate(180deg);
+}
+
+.accordion-content {
+  max-height: 0;
+  padding: 0 1.5rem;
+  background-color: var(--surface);
+  color: var(--text-secondary);
+  overflow: hidden;
+  transition: max-height 0.5s ease, padding 0.3s ease;
+}
+
+.accordion-content p {
+  margin: 1.5rem 0; /* Increased bottom margin */
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.accordion-content ul {
+  list-style-type: disc;
+  padding-left: 2rem;
+  margin-bottom: 1.5rem; /* Increased bottom margin */
+}
+
+.accordion-content ul li {
+  margin-bottom: 0.75rem; /* Increased spacing between list items */
+}
+
+/* Fixed Height for All Accordion Content with Additional Bottom Padding */
+.accordion-item.active .accordion-content {
+  max-height: 350px; /* Increased to accommodate additional margins */
+  padding: 1.5rem 1.5rem 2rem; /* Top, right, bottom padding */
+}
+
+
+/* ------------------------
+   Responsive Adjustments
+------------------------ */
+
+/* Grid Adjustments for B2B Solutions and Why Choose Us */
+@media (max-width: 992px) {
+  .b2b-solution-item,
+  .why-choose-item,
+  .ip-proxy-item,
+  .credits-item {
+    flex: 1 1 45%;
+  }
+}
+
+/* Full Width on Small Screens */
+@media (max-width: 768px) {
+  .b2b-solution-item,
+  .why-choose-item,
+  .ip-proxy-item,
+  .credits-item {
+    flex: 1 1 100%;
+  }
+
+  /* Adjust Grids for Single Column Layout */
+  .b2b-solutions-grid,
+  .why-choose-grid,
+  .ip-proxy-content,
+  .credits-content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  /* Features Accordion Adjustments */
+  .features-accordion {
+    max-width: 100%;
+  }
+
+  .accordion-item.active .accordion-content {
+    max-height: 300px; /* Adjust if necessary for smaller screens */
+    padding: 1.5rem 1.5rem 2rem;
+  }
+
+  
