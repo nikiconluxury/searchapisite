@@ -80,3 +80,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+const toggleButton = document.querySelector('.mobile-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+toggleButton.addEventListener('click', () => {
+  const isExpanded = toggleButton.getAttribute('aria-expanded') === 'true';
+  toggleButton.setAttribute('aria-expanded', !isExpanded);
+  navLinks.classList.toggle('active');
+});

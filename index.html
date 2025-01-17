@@ -15,124 +15,48 @@
   />
 </head>
 <body>
-
-  <!-- Hero Section -->
+  <!-- Sticky Navigation Bar -->
+  <nav class="navbar">
+    <!-- Logo on the Left -->
+    <a href="index.html" class="logo">SCRAPECOMPASS</a>
+  
+    <!-- Mobile Toggle Button -->
+    <button class="mobile-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <i class="fas fa-bars"></i>
+    </button>
+  
+    <!-- Navigation Links - Center -->
+    <div class="nav-links">
+      <a href="#" class="nav-link">API</a>
+      <a href="features.html" class="nav-link">Features</a>
+      <a href="solutions.html" class="nav-link">Solutions</a>
+      <a href="pricing.html" class="nav-link">Pricing</a>
+      <a href="documentation.html" class="nav-link">Documentation</a>
+    </div>
+  
+    <!-- Authentication Buttons - Right -->
+    <div class="auth-buttons">
+      <a href="login.html" class="btn auth-btn login">Login</a>
+      <a href="register.html" class="btn auth-btn register">Register</a>
+    </div>
+  </nav>
+  
+    
   <section class="hero">
-    <nav class="navbar">
-      <div class="container">
-        <a href="index.html" class="logo">SCRAPECOMPASS</a>
-        <!-- Updated Nav Links -->
-        <div class="nav-links">
-          <a href="#" class="nav-link">API</a>
-          <a href="features.html" class="nav-link">Features</a>
-          <a href="solutions.html" class="nav-link">Solutions</a>
-          <a href="pricing.html" class="nav-link">Pricing</a>
-          <a href="documentation.html" class="nav-link">Documentation</a>
-        </div>
-        <div class="auth-buttons">
-          <a href="login.html" class="btn auth-btn login">Login</a>
-          <a href="register.html" class="btn auth-btn register">Register</a>
-        </div>
-      </div>
-    </nav>
-
-    <div class="container hero-content">
-      <h1>Transform Web Data<br>Into Insights</h1>
+    <div class="hero-content">
+      <h1>Transform Web Data<br />Into Insights</h1>
       <p class="hero-subtitle">
         Access web data effortlessly with our powerful API.<br />
         Built for developers, designed for scale.
       </p>
       <div class="cta-buttons">
-        <!-- Link to Register & Documentation Pages -->
-        <a href="register.html" class="btn primary-btn glow">Get Started Free</a>
+        <a href="register.html" class="btn primary-btn">Get Started Free</a>
         <a href="documentation.html" class="btn secondary-btn">View Documentation</a>
       </div>
     </div>
   </section>
+  
 
-
-
-<!-- Combined Advanced Features Section -->
-<section class="advanced-features-section container">
-  <h2 class="section-title">Advanced Features</h2>
-  <p class="section-subtitle">
-    Enhance your data extraction capabilities with our premium tools and flexible credit management system.
-  </p>
-  <div class="advanced-features-list">
-    <!-- Feature Item 1 -->
-    <div class="feature-item">
-      <div class="feature-icon">
-        <i class="fas fa-network-wired"></i>
-      </div>
-      <div class="feature-content">
-        <h3>Seamless IP Rotation</h3>
-        <p>
-          Our intelligent IP rotation system automatically switches IP addresses to prevent blocking and maintain access to target websites.
-        </p>
-      </div>
-    </div>
-    <!-- Feature Item 2 -->
-    <div class="feature-item">
-      <div class="feature-icon">
-        <i class="fas fa-shield-virus"></i>
-      </div>
-      <div class="feature-content">
-        <h3>Secure Proxies</h3>
-        <p>
-          Utilize our secure proxies to mask your identity and protect your data extraction activities from potential threats.
-        </p>
-      </div>
-    </div>
-    <!-- Feature Item 3 -->
-    <div class="feature-item">
-      <div class="feature-icon">
-        <i class="fas fa-cogs"></i>
-      </div>
-      <div class="feature-content">
-        <h3>Custom Proxy Solutions</h3>
-        <p>
-          Get tailor-made proxy configurations that align with your specific scraping requirements and operational scales.
-        </p>
-      </div>
-    </div>
-    <!-- Feature Item 4 -->
-    <div class="feature-item">
-      <div class="feature-icon">
-        <i class="fas fa-shopping-cart"></i>
-      </div>
-      <div class="feature-content">
-        <h3>Buy Credits</h3>
-        <p>
-          Easily purchase additional credits to scale your data extraction without any hassle. Our secure payment gateway ensures safe transactions every time.
-        </p>
-      </div>
-    </div>
-    <!-- Feature Item 5 -->
-    <div class="feature-item">
-      <div class="feature-icon">
-        <i class="fas fa-redo-alt"></i>
-      </div>
-      <div class="feature-content">
-        <h3>Refill Credits</h3>
-        <p>
-          Keep your projects running smoothly by refilling your credits whenever needed. Set up automatic refills to never run out of credits during critical operations.
-        </p>
-      </div>
-    </div>
-    <!-- Feature Item 6 -->
-    <div class="feature-item">
-      <div class="feature-icon">
-        <i class="fas fa-user-cog"></i>
-      </div>
-      <div class="feature-content">
-        <h3>Manage Usage</h3>
-        <p>
-          Monitor and manage your credit usage through our intuitive dashboard. Get detailed reports and insights to optimize your data extraction strategies.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- Redesigned B2B Solutions Section with Card-Based Layout -->
 <section class="b2b-solutions-section container">
@@ -313,13 +237,95 @@
     </div>
   </div>
 </section>
-<section class="why-choose-section container">
+
+
+<!-- Combined Advanced Features Section -->
+<section class="advanced-features-section container">
+  <h2 class="section-title">Advanced Features</h2>
+  <p class="section-subtitle">
+    Enhance your data extraction capabilities with our premium tools and flexible credit management system.
+  </p>
+  <div class="advanced-features-list">
+    <!-- Feature Item 1 -->
+    <div class="feature-item">
+      <div class="feature-icon">
+        <i class="fas fa-network-wired"></i>
+      </div>
+      <div class="feature-content">
+        <h3>Seamless IP Rotation</h3>
+        <p>
+          Our intelligent IP rotation system automatically switches IP addresses to prevent blocking and maintain access to target websites.
+        </p>
+      </div>
+    </div>
+    <!-- Feature Item 2 -->
+    <div class="feature-item">
+      <div class="feature-icon">
+        <i class="fas fa-shield-virus"></i>
+      </div>
+      <div class="feature-content">
+        <h3>Secure Proxies</h3>
+        <p>
+          Utilize our secure proxies to mask your identity and protect your data extraction activities from potential threats.
+        </p>
+      </div>
+    </div>
+    <!-- Feature Item 3 -->
+    <div class="feature-item">
+      <div class="feature-icon">
+        <i class="fas fa-cogs"></i>
+      </div>
+      <div class="feature-content">
+        <h3>Custom Proxy Solutions</h3>
+        <p>
+          Get tailor-made proxy configurations that align with your specific scraping requirements and operational scales.
+        </p>
+      </div>
+    </div>
+    <!-- Feature Item 4 -->
+    <div class="feature-item">
+      <div class="feature-icon">
+        <i class="fas fa-shopping-cart"></i>
+      </div>
+      <div class="feature-content">
+        <h3>Buy Credits</h3>
+        <p>
+          Easily purchase additional credits to scale your data extraction without any hassle. Our secure payment gateway ensures safe transactions every time.
+        </p>
+      </div>
+    </div>
+    <!-- Feature Item 5 -->
+    <div class="feature-item">
+      <div class="feature-icon">
+        <i class="fas fa-redo-alt"></i>
+      </div>
+      <div class="feature-content">
+        <h3>Refill Credits</h3>
+        <p>
+          Keep your projects running smoothly by refilling your credits whenever needed. Set up automatic refills to never run out of credits during critical operations.
+        </p>
+      </div>
+    </div>
+    <!-- Feature Item 6 -->
+    <div class="feature-item">
+      <div class="feature-icon">
+        <i class="fas fa-user-cog"></i>
+      </div>
+      <div class="feature-content">
+        <h3>Manage Usage</h3>
+        <p>
+          Monitor and manage your credit usage through our intuitive dashboard. Get detailed reports and insights to optimize your data extraction strategies.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="why-choose-section">
   <h2 class="section-title">Why Choose Us</h2>
   <p class="section-subtitle">
     Discover the reasons why our clients trust us for their data extraction needs.
   </p>
   <div class="why-choose-grid">
-    <!-- Why Choose Us Feature 1 -->
     <div class="why-choose-item">
       <div class="why-choose-icon">
         <i class="fas fa-check-circle"></i>
@@ -327,7 +333,6 @@
       <h3>Reliable Data Extraction</h3>
       <p>Accurate and timely data extraction from any website.</p>
     </div>
-    <!-- Why Choose Us Feature 2 -->
     <div class="why-choose-item">
       <div class="why-choose-icon">
         <i class="fas fa-chart-line"></i>
@@ -335,7 +340,6 @@
       <h3>Scalable Solutions</h3>
       <p>Whether you need to scrape a few pages or millions, our service scales with your needs.</p>
     </div>
-    <!-- Why Choose Us Feature 3 -->
     <div class="why-choose-item">
       <div class="why-choose-icon">
         <i class="fas fa-headset"></i>
@@ -343,7 +347,6 @@
       <h3>24/7 Customer Support</h3>
       <p>Our dedicated support team is available around the clock to assist you.</p>
     </div>
-    <!-- Why Choose Us Feature 4 -->
     <div class="why-choose-item">
       <div class="why-choose-icon">
         <i class="fas fa-book"></i>
@@ -351,7 +354,6 @@
       <h3>Comprehensive Documentation</h3>
       <p>Detailed guides and resources to help you make the most of our services.</p>
     </div>
-    <!-- Why Choose Us Feature 5 -->
     <div class="why-choose-item">
       <div class="why-choose-icon">
         <i class="fas fa-dollar-sign"></i>
@@ -359,7 +361,6 @@
       <h3>Flexible Pricing Plans</h3>
       <p>Choose from a variety of pricing plans that fit your budget and requirements.</p>
     </div>
-    <!-- Why Choose Us Feature 6 -->
     <div class="why-choose-item">
       <div class="why-choose-icon">
         <i class="fas fa-shield-alt"></i>
@@ -367,24 +368,23 @@
       <h3>Advanced Security</h3>
       <p>We prioritize your data's security with state-of-the-art measures.</p>
     </div>
-    <!-- Why Choose Us Feature 7 -->
     <div class="why-choose-item">
       <div class="why-choose-icon">
-        <i class="fas fa-rocket"></i>
+        <i class="fas fa-tools"></i>
       </div>
-      <h3>Fast Implementation</h3>
-      <p>Quickly integrate our API into your systems with minimal downtime.</p>
+      <h3>Customizable Integrations</h3>
+      <p>Adapt our services to fit seamlessly into your existing workflows.</p>
     </div>
-    <!-- Why Choose Us Feature 8 -->
     <div class="why-choose-item">
       <div class="why-choose-icon">
-        <i class="fas fa-users-cog"></i>
+        <i class="fas fa-clock"></i>
       </div>
-      <h3>Customizable Solutions</h3>
-      <p>Tailor our services to meet your unique business requirements.</p>
+      <h3>Real-Time Insights</h3>
+      <p>Access live data to make timely, informed decisions for your business.</p>
     </div>
   </div>
 </section>
+
 <!-- Footer -->
 <footer>
   <div class="footer-container">
