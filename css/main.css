@@ -1414,3 +1414,192 @@ form button:hover {
   margin: 0;
   color: var(--text-secondary);
 }
+/* Credits & Usage Explanation Section */
+.credits-section {
+  padding: 4rem 0;
+  background-color: var(--background);
+  text-align: center;
+}
+
+.credits-section .section-title {
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+  color: var(--accent);
+}
+
+.credits-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.credits-item {
+  flex: 1 1 30%;
+  background-color: var(--surface);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.credits-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px var(--glow);
+}
+
+.credits-item i {
+  font-size: 2rem;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.credits-item h3 {
+  font-size: 1.3rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.credits-item p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Pricing Comparison Table Section */
+.comparison-section {
+  padding: 4rem 0;
+  background-color: var(--background);
+  text-align: center;
+}
+
+.comparison-section .section-title {
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+  color: var(--accent);
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+.comparison-table th,
+.comparison-table td {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  text-align: center;
+}
+
+.comparison-table th {
+  background-color: var(--surface);
+  color: var(--primary);
+  font-size: 1.1rem;
+}
+
+.comparison-table td {
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+
+.comparison-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.comparison-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.comparison-table th:first-child,
+.comparison-table td:first-child {
+  text-align: left;
+}
+
+/* Pricing FAQ Section */
+.pricing-faq-section {
+  padding: 4rem 0;
+  background-color: var(--background);
+  text-align: center;
+}
+
+.pricing-faq-section .section-title {
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+  color: var(--accent);
+}
+
+.faq-accordion {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.faq-item {
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.faq-question {
+  width: 100%;
+  padding: 1rem;
+  background: var(--surface);
+  border: none;
+  text-align: left;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.3s ease;
+}
+
+.faq-question::after {
+  content: "\f078"; /* Font Awesome Down Arrow */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-question::after {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background: var(--surface);
+  padding: 0 1rem;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 200px; /* Adjust as needed */
+  padding: 1rem;
+}
+
+.faq-answer p {
+  margin: 0;
+  color: var(--text-secondary);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .credits-item {
+    flex: 1 1 45%;
+  }
+}
+
+@media (max-width: 768px) {
+  .credits-item {
+    flex: 1 1 100%;
+  }
+
+  .comparison-table th,
+  .comparison-table td {
+    padding: 0.8rem;
+  }
+}
