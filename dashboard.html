@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ScrapeCompass - Dashboard</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  />
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">SCRAPECOMPASS</a>
+    <div class="nav-links">
+      <a href="dashboard.html" class="nav-link active">Dashboard</a>
+      <a href="analytics.html" class="nav-link">Analytics</a>
+      <a href="billing.html" class="nav-link">Billing</a>
+      <a href="settings.html" class="nav-link">Settings</a>
+      <a href="playground.html" class="nav-link">Playground</a>
+    </div>
+  </nav>
+
+  <div class="layout">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h2>Navigation</h2>
+      <ul>
+        <li><a href="dashboard.html" class="active"><i class="fas fa-home"></i> Dashboard</a></li>
+        <li><a href="analytics.html"><i class="fas fa-chart-bar"></i> Analytics</a></li>
+        <li><a href="billing.html"><i class="fas fa-file-invoice-dollar"></i> Billing</a></li>
+        <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+        <li><a href="playground.html"><i class="fas fa-flask"></i> Playground</a></li>
+      </ul>
+      <ul>
+        <li><a onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+      </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <div class="container">
+        <h1>Dashboard</h1>
+
+        <!-- Action Bar -->
+        <div class="action-bar">
+          <div>
+            <p><strong>Welcome to your dashboard!</strong></p>
+            <p>View key insights and manage your account.</p>
+          </div>
+          <div>
+            <button class="btn-primary">View Full Report</button>
+            <button class="btn-secondary">Manage Account</button>
+          </div>
+        </div>
+
+        <!-- Dashboard Overview -->
+        <div class="top-cards">
+          <div class="card">
+            <h3>Active Users</h3>
+            <p>1,245</p>
+          </div>
+          <div class="card">
+            <h3>API Requests</h3>
+            <p>5,430</p>
+          </div>
+          <div class="card">
+            <h3>Revenue</h3>
+            <p>$12,400</p>
+          </div>
+        </div>
+
+        <!-- Recent Activities -->
+        <h2>Recent Activities</h2>
+        <table class="log-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Event</th>
+              <th>User</th>
+              <th>Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2025-01-22</td>
+              <td>Login</td>
+              <td>John Doe</td>
+              <td>Success</td>
+            </tr>
+            <tr>
+              <td>2025-01-21</td>
+              <td>API Request</td>
+              <td>Jane Smith</td>
+              <td>Data Extraction</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="terms-and-conditions.html">Terms and Conditions</a></li>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Features</h4>
+        <ul>
+          <li><a href="features.html">Reliable Data Extraction</a></li>
+          <li><a href="easy-integration.html">Easy Integration</a></li>
+          <li><a href="solutions.html">Scalable Solutions</a></li>
+          <li><a href="pricing.html">Flexible Pricing Plans</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Documentation</h4>
+        <ul>
+          <li><a href="documentation.html">API Documentation</a></li>
+          <li><a href="guides.html">User Guides</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li>Email: <a href="mailto:support@scrapecompass.com">support@scrapecompass.com</a></li>
+          <li>Phone: <a href="tel:+18554402242">(855) 440-2242</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function logout() {
+      alert("Logout functionality not implemented.");
+    }
+  </script>
+</body>
+</html>

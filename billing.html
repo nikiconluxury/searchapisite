@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ScrapeCompass - Billing</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  />
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">SCRAPECOMPASS</a>
+    <div class="nav-links">
+      <a href="dashboard.html" class="nav-link">Dashboard</a>
+      <a href="analytics.html" class="nav-link">Analytics</a>
+      <a href="billing.html" class="nav-link active">Billing</a>
+      <a href="settings.html" class="nav-link">Settings</a>
+      <a href="playground.html" class="nav-link">Playground</a>
+    </div>
+  </nav>
+
+  <div class="layout">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h2>Navigation</h2>
+      <ul>
+        <li><a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+        <li><a href="analytics.html"><i class="fas fa-chart-bar"></i> Analytics</a></li>
+        <li><a href="billing.html" class="active"><i class="fas fa-file-invoice-dollar"></i> Billing</a></li>
+        <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+        <li><a href="playground.html"><i class="fas fa-flask"></i> Playground</a></li>
+      </ul>
+      <ul>
+        <li><a onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+      </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <div class="container">
+        <h1>Billing</h1>
+
+        <!-- Action Bar -->
+        <div class="action-bar">
+          <div>
+            <p><strong>Manage Your Billing</strong></p>
+            <p>View your invoices, payment methods, and subscription details.</p>
+          </div>
+          <div>
+            <button class="btn-primary">Add Payment Method</button>
+            <button class="btn-secondary">Upgrade Plan</button>
+          </div>
+        </div>
+
+        <!-- Billing Summary -->
+        <h2>Billing Summary</h2>
+        <div class="billing-summary">
+          <div class="billing-card">
+            <h3>Current Plan</h3>
+            <p><strong>Pro Plan</strong></p>
+            <p>$49.99 / month</p>
+          </div>
+          <div class="billing-card">
+            <h3>Next Billing Date</h3>
+            <p><strong>February 15, 2025</strong></p>
+          </div>
+        </div>
+
+        <!-- Payment History -->
+        <h2>Payment History</h2>
+        <table class="payment-history">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Amount</th>
+              <th>Payment Method</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2025-01-15</td>
+              <td>$49.99</td>
+              <td>Visa Ending in 1234</td>
+              <td>Success</td>
+            </tr>
+            <tr>
+              <td>2024-12-15</td>
+              <td>$49.99</td>
+              <td>Visa Ending in 1234</td>
+              <td>Success</td>
+            </tr>
+            <tr>
+              <td>2024-11-15</td>
+              <td>$49.99</td>
+              <td>Visa Ending in 1234</td>
+              <td>Success</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Payment Methods -->
+        <h2>Payment Methods</h2>
+        <div class="payment-methods">
+          <div class="payment-method">
+            <p><strong>Visa Ending in 1234</strong></p>
+            <p>Expires 12/2025</p>
+            <button class="btn-secondary">Remove</button>
+          </div>
+          <div class="payment-method">
+            <p><strong>Mastercard Ending in 5678</strong></p>
+            <p>Expires 08/2026</p>
+            <button class="btn-secondary">Remove</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="terms-and-conditions.html">Terms and Conditions</a></li>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Features</h4>
+        <ul>
+          <li><a href="features.html">Reliable Data Extraction</a></li>
+          <li><a href="easy-integration.html">Easy Integration</a></li>
+          <li><a href="solutions.html">Scalable Solutions</a></li>
+          <li><a href="pricing.html">Flexible Pricing Plans</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Documentation</h4>
+        <ul>
+          <li><a href="documentation.html">API Documentation</a></li>
+          <li><a href="guides.html">User Guides</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li>Email: <a href="mailto:support@scrapecompass.com">support@scrapecompass.com</a></li>
+          <li>Phone: <a href="tel:+18554402242">(855) 440-2242</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function logout() {
+      alert("Logout functionality not implemented.");
+    }
+  </script>
+</body>
+</html>

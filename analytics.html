@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ScrapeCompass - Analytics</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  />
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">SCRAPECOMPASS</a>
+    <div class="nav-links">
+      <a href="dashboard.html" class="nav-link">Dashboard</a>
+      <a href="analytics.html" class="nav-link active">Analytics</a>
+      <a href="billing.html" class="nav-link">Billing</a>
+      <a href="settings.html" class="nav-link">Settings</a>
+      <a href="playground.html" class="nav-link">Playground</a>
+    </div>
+  </nav>
+
+  <div class="layout">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h2>Navigation</h2>
+      <ul>
+        <li><a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+        <li><a href="analytics.html" class="active"><i class="fas fa-chart-bar"></i> Analytics</a></li>
+        <li><a href="billing.html"><i class="fas fa-file-invoice-dollar"></i> Billing</a></li>
+        <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+        <li><a href="playground.html"><i class="fas fa-flask"></i> Playground</a></li>
+      </ul>
+      <ul>
+        <li><a onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+      </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <h1>Analytics</h1>
+
+      <!-- Action Bar -->
+      <div class="action-bar">
+        <div>
+          <p><strong>Analyze Your Data</strong></p>
+          <p>Export reports, monitor metrics, and track user activity in real-time.</p>
+        </div>
+        <div>
+          <button class="btn-primary">Export Data</button>
+          <button class="btn-secondary">Generate Report</button>
+          <button class="btn-secondary">Share Analytics</button>
+        </div>
+      </div>
+
+      <!-- Filter Section -->
+      <div class="filter-bar">
+        <select>
+          <option value="last-week">Last Week</option>
+          <option value="last-month">Last Month</option>
+          <option value="last-year">Last Year</option>
+        </select>
+        <select>
+          <option value="users">Users</option>
+          <option value="sessions">Sessions</option>
+          <option value="revenue">Revenue</option>
+        </select>
+        <input type="text" placeholder="Search Analytics...">
+        <button class="btn-primary">Apply Filters</button>
+      </div>
+
+      <!-- Analytics Overview -->
+      <div class="top-cards">
+        <div class="card">
+          <h3>Total Users</h3>
+          <p>1,250</p>
+        </div>
+        <div class="card">
+          <h3>Total Sessions</h3>
+          <p>4,300</p>
+        </div>
+        <div class="card">
+          <h3>Revenue</h3>
+          <p>$12,450</p>
+        </div>
+      </div>
+
+      <!-- Product Analytics Section -->
+      <h2>Product Analytics</h2>
+      <div class="product-list">
+        <div class="product-item" data-product="product-a">
+          <h3>Product A</h3>
+          <p>Views: 1,200 | Sales: 300</p>
+          <div class="product-details">
+            <p>Conversion Rate: 25%</p>
+            <p>Revenue: $7,500</p>
+          </div>
+        </div>
+        <div class="product-item" data-product="product-b">
+          <h3>Product B</h3>
+          <p>Views: 900 | Sales: 150</p>
+          <div class="product-details">
+            <p>Conversion Rate: 16.7%</p>
+            <p>Revenue: $4,200</p>
+          </div>
+        </div>
+        <div class="product-item" data-product="product-c">
+          <h3>Product C</h3>
+          <p>Views: 750 | Sales: 100</p>
+          <div class="product-details">
+            <p>Conversion Rate: 13.3%</p>
+            <p>Revenue: $3,000</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chart Section -->
+      <h2>Activity Over Time</h2>
+      <div class="chart-container">
+        <canvas id="activityChart"></canvas>
+      </div>
+
+      <!-- Logs Table -->
+      <h2>Recent Events</h2>
+      <table class="log-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Event</th>
+            <th>User</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2025-01-20</td>
+            <td>Login</td>
+            <td>John Doe</td>
+            <td>Success</td>
+          </tr>
+          <tr>
+            <td>2025-01-19</td>
+            <td>Purchase</td>
+            <td>Jane Smith</td>
+            <td>Subscription Upgrade</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="terms-and-conditions.html">Terms and Conditions</a></li>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Features</h4>
+        <ul>
+          <li><a href="features.html">Reliable Data Extraction</a></li>
+          <li><a href="easy-integration.html">Easy Integration</a></li>
+          <li><a href="solutions.html">Scalable Solutions</a></li>
+          <li><a href="pricing.html">Flexible Pricing Plans</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Documentation</h4>
+        <ul>
+          <li><a href="documentation.html">API Documentation</a></li>
+          <li><a href="guides.html">User Guides</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li>Email: <a href="mailto:support@scrapecompass.com">support@scrapecompass.com</a></li>
+          <li>Phone: <a href="tel:+18554402242">(855) 440-2242</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Expandable Product Details
+    document.addEventListener("DOMContentLoaded", () => {
+      const productItems = document.querySelectorAll(".product-item");
+      productItems.forEach((item) => {
+        item.addEventListener("click", () => {
+          productItems.forEach((i) => {
+            if (i !== item) i.querySelector(".product-details").style.display = "none";
+          });
+          const details = item.querySelector(".product-details");
+          details.style.display = details.style.display === "block" ? "none" : "block";
+        });
+      });
+
+      // Chart.js for Activity Over Time
+      const ctxActivity = document.getElementById("activityChart").getContext("2d");
+      new Chart(ctxActivity, {
+        type: "line",
+        data: {
+          labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+          datasets: [
+            {
+              label: "Sessions",
+              data: [100, 200, 300, 400, 500, 600, 700],
+              backgroundColor: "rgba(0, 123, 255, 0.5)",
+              borderColor: "rgba(0, 123, 255, 1)",
+              fill: true,
+            },
+          ],
+        },
+      });
+    });
+
+    function logout() {
+      alert("Logout functionality not implemented.");
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>

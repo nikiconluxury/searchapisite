@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ScrapeCompass - Playground</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  />
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">SCRAPECOMPASS</a>
+    <div class="nav-links">
+      <a href="dashboard.html" class="nav-link">Dashboard</a>
+      <a href="analytics.html" class="nav-link">Analytics</a>
+      <a href="billing.html" class="nav-link">Billing</a>
+      <a href="settings.html" class="nav-link">Settings</a>
+      <a href="playground.html" class="nav-link active">Playground</a>
+    </div>
+  </nav>
+
+  <div class="layout">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h2>Navigation</h2>
+      <ul>
+        <li><a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+        <li><a href="analytics.html"><i class="fas fa-chart-bar"></i> Analytics</a></li>
+        <li><a href="billing.html" class="active"><i class="fas fa-file-invoice-dollar"></i> Billing</a></li>
+        <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+        <li><a href="playground.html"><i class="fas fa-flask"></i> Playground</a></li>
+      </ul>
+      <ul>
+        <li><a onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+      </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <h1>Playground</h1>
+
+      <!-- Action Bar -->
+      <div class="action-bar">
+        <div>
+          <p><strong>Test Your API Endpoints</strong></p>
+          <p>Interact with your API directly from the playground and inspect the responses in real time.</p>
+        </div>
+        <div>
+          <button class="btn-secondary" id="reset-fields">Reset Fields</button>
+        </div>
+      </div>
+
+      <!-- Form and Response Section -->
+      <div class="response-container">
+        <div class="settings-section">
+          <h2>Test Your API</h2>
+          <form id="api-test-form">
+            <label for="endpoint-menu">Choose API Endpoint</label>
+            <select id="endpoint-menu">
+              <option value="https://api.example.com/users">/users</option>
+              <option value="https://api.example.com/products">/products</option>
+              <option value="https://api.example.com/orders">/orders</option>
+            </select>
+
+            <label for="request-method">Request Method</label>
+            <select id="request-method">
+              <option value="GET">GET</option>
+              <option value="POST">POST</option>
+              <option value="PUT">PUT</option>
+              <option value="DELETE">DELETE</option>
+            </select>
+
+            <label for="payload">Payload (JSON)</label>
+            <textarea id="payload" rows="5" placeholder='{"key": "value"}'></textarea>
+
+            <button type="submit" class="btn-primary">Send Request</button>
+          </form>
+        </div>
+
+        <div class="settings-section">
+          <h2>Response</h2>
+          <pre id="response-viewer">Response will appear here...</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="terms-and-conditions.html">Terms and Conditions</a></li>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Features</h4>
+        <ul>
+          <li><a href="features.html">Reliable Data Extraction</a></li>
+          <li><a href="easy-integration.html">Easy Integration</a></li>
+          <li><a href="solutions.html">Scalable Solutions</a></li>
+          <li><a href="pricing.html">Flexible Pricing Plans</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Documentation</h4>
+        <ul>
+          <li><a href="documentation.html">API Documentation</a></li>
+          <li><a href="guides.html">User Guides</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li>Email: <a href="mailto:support@scrapecompass.com">support@scrapecompass.com</a></li>
+          <li>Phone: <a href="tel:+18554402242">(855) 440-2242</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const form = document.getElementById("api-test-form");
+    const responseViewer = document.getElementById("response-viewer");
+    const resetButton = document.getElementById("reset-fields");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const endpoint = document.getElementById("endpoint-menu").value;
+      const method = document.getElementById("request-method").value;
+      const payload = document.getElementById("payload").value;
+
+      try {
+        const response = await fetch(endpoint, {
+          method,
+          headers: { "Content-Type": "application/json" },
+          body: method !== "GET" ? payload : null,
+        });
+
+        const data = await response.json();
+        responseViewer.innerText = JSON.stringify(data, null, 2);
+      } catch (error) {
+        responseViewer.innerText = `Error: ${error.message}`;
+      }
+    });
+
+    resetButton.addEventListener("click", () => {
+      document.getElementById("endpoint-menu").value = "https://api.example.com/users";
+      document.getElementById("request-method").value = "GET";
+      document.getElementById("payload").value = "";
+      responseViewer.innerText = "Response will appear here...";
+    });
+  </script>
+</body>
+</html>
