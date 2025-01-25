@@ -13,15 +13,19 @@
 <body>
   <!-- Navigation Bar -->
   <nav class="navbar">
-    <a href="index.html" class="logo">SCRAPECOMPASS</a>
-    <div class="nav-links">
-      <a href="dashboard.html" class="nav-link active">Dashboard</a>
-      <a href="analytics.html" class="nav-link">Analytics</a>
-      <a href="billing.html" class="nav-link">Billing</a>
-      <a href="settings.html" class="nav-link">Settings</a>
-      <a href="playground.html" class="nav-link">Playground</a>
+    <div class="inner-container">
+      <a href="index.html" class="logo">SCRAPECOMPASS</a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="dashboard.html" class="nav-link">Dashboard</a>
+        <a href="features.html" class="nav-link">Features</a>
+        <a href="solutions.html" class="nav-link">Solutions</a>
+        <a href="pricing.html" class="nav-link">Pricing</a>
+        <a href="documentation.html" class="nav-link">Documentation</a>
+      </div>
     </div>
   </nav>
+  
 
   <div class="layout">
     <!-- Sidebar -->
@@ -35,70 +39,69 @@
         <li><a href="playground.html"><i class="fas fa-flask"></i> Playground</a></li>
       </ul>
       <ul>
-        <li><a onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        <li><a href="#" onclick="logoff()" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
       </ul>
     </div>
+    
 
     <!-- Main Content -->
     <div class="main-content">
-      <div class="container">
-        <h1>Dashboard</h1>
+      <h1>Dashboard</h1>
 
-        <!-- Action Bar -->
-        <div class="action-bar">
-          <div>
-            <p><strong>Welcome to your dashboard!</strong></p>
-            <p>View key insights and manage your account.</p>
-          </div>
-          <div>
-            <button class="btn-primary">View Full Report</button>
-            <button class="btn-secondary">Manage Account</button>
-          </div>
+      <!-- Action Bar -->
+      <div class="action-bar">
+        <div>
+          <p><strong>Welcome to your dashboard!</strong></p>
+          <p>View key insights and manage your account.</p>
         </div>
-
-        <!-- Dashboard Overview -->
-        <div class="top-cards">
-          <div class="card">
-            <h3>Active Users</h3>
-            <p>1,245</p>
-          </div>
-          <div class="card">
-            <h3>API Requests</h3>
-            <p>5,430</p>
-          </div>
-          <div class="card">
-            <h3>Revenue</h3>
-            <p>$12,400</p>
-          </div>
+        <div>
+          <button class="btn-primary">View Full Report</button>
+          <button class="btn-secondary">Manage Account</button>
         </div>
-
-        <!-- Recent Activities -->
-        <h2>Recent Activities</h2>
-        <table class="log-table">
-          <thead>
-            <tr>
-              <th>Date</th>
-              <th>Event</th>
-              <th>User</th>
-              <th>Details</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>2025-01-22</td>
-              <td>Login</td>
-              <td>John Doe</td>
-              <td>Success</td>
-            </tr>
-            <tr>
-              <td>2025-01-21</td>
-              <td>API Request</td>
-              <td>Jane Smith</td>
-              <td>Data Extraction</td>
-            </tr>
-          </tbody>
-        </table>
       </div>
+
+      <!-- Dashboard Overview -->
+      <div class="top-cards">
+        <div class="card">
+          <h3>Active Users</h3>
+          <p>1,245</p>
+        </div>
+        <div class="card">
+          <h3>API Requests</h3>
+          <p>5,430</p>
+        </div>
+        <div class="card">
+          <h3>Revenue</h3>
+          <p>$12,400</p>
+        </div>
+      </div>
+
+      <!-- Recent Activities -->
+      <h2>Recent Activities</h2>
+      <table class="log-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Event</th>
+            <th>User</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2025-01-22</td>
+            <td>Login</td>
+            <td>John Doe</td>
+            <td>Success</td>
+          </tr>
+          <tr>
+            <td>2025-01-21</td>
+            <td>API Request</td>
+            <td>Jane Smith</td>
+            <td>Data Extraction</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 
@@ -140,11 +143,4 @@
       </div>
     </div>
   </footer>
-
-  <script>
-    function logout() {
-      alert("Logout functionality not implemented.");
-    }
-  </script>
-</body>
-</html>
+  <script src="js/main.js"></script>

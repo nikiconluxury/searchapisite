@@ -13,15 +13,19 @@
 <body>
   <!-- Navigation Bar -->
   <nav class="navbar">
-    <a href="index.html" class="logo">SCRAPECOMPASS</a>
-    <div class="nav-links">
-      <a href="dashboard.html" class="nav-link">Dashboard</a>
-      <a href="analytics.html" class="nav-link">Analytics</a>
-      <a href="billing.html" class="nav-link">Billing</a>
-      <a href="settings.html" class="nav-link active">Settings</a>
-      <a href="playground.html" class="nav-link">Playground</a>
+    <div class="inner-container">
+      <a href="index.html" class="logo">SCRAPECOMPASS</a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="dashboard.html" class="nav-link">Dashboard</a>
+        <a href="features.html" class="nav-link">Features</a>
+        <a href="solutions.html" class="nav-link">Solutions</a>
+        <a href="pricing.html" class="nav-link">Pricing</a>
+        <a href="documentation.html" class="nav-link">Documentation</a>
+      </div>
     </div>
   </nav>
+  
 
   <div class="layout">
     <!-- Sidebar -->
@@ -30,15 +34,15 @@
       <ul>
         <li><a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
         <li><a href="analytics.html"><i class="fas fa-chart-bar"></i> Analytics</a></li>
-        <li><a href="billing.html" class="active"><i class="fas fa-file-invoice-dollar"></i> Billing</a></li>
-        <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+        <li><a href="billing.html"><i class="fas fa-file-invoice-dollar"></i> Billing</a></li>
+        <li><a href="settings.html" class="active"><i class="fas fa-cog"></i> Settings</a></li>
         <li><a href="playground.html"><i class="fas fa-flask"></i> Playground</a></li>
       </ul>
       <ul>
-        <li><a onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        <li><a href="#" onclick="logout()" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
       </ul>
     </div>
-
+    
     <!-- Main Content -->
     <div class="main-content">
       <h1>Settings</h1>

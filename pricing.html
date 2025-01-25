@@ -2,260 +2,73 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ScrapeCompass API - Pricing</title>
 
-  <!-- Link to external CSS -->
+  <!-- External CSS -->
   <link rel="stylesheet" href="css/main.css" />
-
-  <!-- Font Awesome (Optional) -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-  />
 </head>
-
 <body>
-  <!-- Sticky Navigation Bar -->
+  <!-- Navigation Bar -->
   <nav class="navbar">
-    <!-- Logo on the Left -->
-    <a href="index.html" class="logo">SCRAPECOMPASS</a>
-  
-    <!-- Mobile Toggle Button -->
-    <button class="mobile-toggle" aria-label="Toggle navigation" aria-expanded="false">
-      <i class="fas fa-bars"></i>
-    </button>
-  
-    <!-- Navigation Links - Center -->
-    <div class="nav-links">
-      <a href="dashboard.html" class="nav-link">API</a>
-      <a href="features.html" class="nav-link">Features</a>
-      <a href="solutions.html" class="nav-link">Solutions</a>
-      <a href="pricing.html" class="nav-link">Pricing</a>
-      <a href="documentation.html" class="nav-link">Documentation</a>
+    <div class="inner-container">
+      <a href="index.html" class="logo">SCRAPECOMPASS</a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="dashboard.html" class="nav-link">Dashboard</a>
+        <a href="features.html" class="nav-link">Features</a>
+        <a href="solutions.html" class="nav-link">Solutions</a>
+        <a href="pricing.html" class="nav-link">Pricing</a>
+        <a href="documentation.html" class="nav-link">Documentation</a>
+      </div>
     </div>
-
   </nav>
   
+  <!-- Hero Section -->
   <section class="hero">
-    <div class="hero-content">
-      <h1>Simple & Transparent Pricing</h1>
-      <p class="hero-subtitle">
-        Choose the plan that fits your data extraction needs
-      </p>
+    <div class="inner-container">
+      <h1 class="hero-title">Simple & Transparent Pricing</h1>
+      <p class="hero-subtitle">Choose a plan that suits your needs. No hidden fees, only value.</p>
     </div>
   </section>
 
-  <main class="container">
-
-    <!-- New Credits & Usage Explanation Section -->
-    <section class="credits-section container">
-      <h2 class="section-title">Understanding Your Credits</h2>
-      <div class="credits-content">
-        <div class="credits-item">
-          <i class="fas fa-coins"></i>
-          <h3>What Are Credits?</h3>
-          <p>
-            Credits represent your usage allowance for API calls. Each plan comes with a predefined number of credits
-            per month, ensuring you have the necessary resources to meet your data extraction needs.
-          </p>
+  <!-- Pricing Plans -->
+  <main class="pricing-content">
+    <div class="inner-container">
+      <div class="pricing-grid">
+        <!-- Plan 1 -->
+        <div class="pricing-card">
+          <h3>Basic</h3>
+          <p class="price">$99<span>/month</span></p>
+          <ul>
+            <li>10,000 API Calls</li>
+            <li>Basic Support</li>
+          </ul>
+          <a href="register.html" class="btn primary-btn">Sign Up</a>
         </div>
-        <div class="credits-item">
-          <i class="fas fa-arrow-up"></i>
-          <h3>Overage Policy</h3>
-          <p>
-            If you exceed your monthly credit allocation, you can purchase additional credits at a discounted rate.
-            This ensures uninterrupted service and flexibility as your needs grow.
-          </p>
+        <!-- Plan 2 -->
+        <div class="pricing-card">
+          <h3>Pro</h3>
+          <p class="price">$299<span>/month</span></p>
+          <ul>
+            <li>50,000 API Calls</li>
+            <li>Priority Support</li>
+          </ul>
+          <a href="register.html" class="btn primary-btn">Sign Up</a>
         </div>
-        <div class="credits-item">
-          <i class="fas fa-chart-line"></i>
-          <h3>Tracking Usage</h3>
-          <p>
-            Monitor your credit usage in real-time through our dashboard. Stay informed about your consumption and
-            optimize your data extraction strategies accordingly.
-          </p>
+        <!-- Plan 3 -->
+        <div class="pricing-card">
+          <h3>Enterprise</h3>
+          <p class="price">Custom<span>/month</span></p>
+          <ul>
+            <li>Unlimited API Calls</li>
+            <li>Dedicated Support</li>
+            <li>Custom Features</li>
+          </ul>
+          <a href="contact.html" class="btn primary-btn">Contact Us</a>
         </div>
-      </div>
-    </section>
-
-    <!-- New Pricing Comparison Table Section -->
-    <section class="comparison-section container">
-      <h2 class="section-title">Compare Our Plans</h2>
-      <table class="comparison-table">
-        <thead>
-          <tr>
-            <th>Features</th>
-            <th>Basic</th>
-            <th>Pro</th>
-            <th>All Access</th>
-            <th>Enterprise</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>API Calls</td>
-            <td>10,000/month</td>
-            <td>50,000/month</td>
-            <td>100,000/month</td>
-            <td>Unlimited</td>
-          </tr>
-          <tr>
-            <td>Support</td>
-            <td>Standard</td>
-            <td>Priority</td>
-            <td>Priority</td>
-            <td>24/7 Premium</td>
-          </tr>
-          <tr>
-            <td>Concurrent Requests</td>
-            <td>2</td>
-            <td>5</td>
-            <td>10</td>
-            <td>Unlimited</td>
-          </tr>
-          <tr>
-            <td>Analytics</td>
-            <td>Basic</td>
-            <td>Advanced</td>
-            <td>Advanced + Custom</td>
-            <td>Custom Dashboard</td>
-          </tr>
-          <tr>
-            <td>Webhook Integrations</td>
-            <td>—</td>
-            <td>—</td>
-            <td>Included</td>
-            <td>Included</td>
-          </tr>
-          <tr>
-            <td>SLA Guarantee</td>
-            <td>—</td>
-            <td>—</td>
-            <td>—</td>
-            <td>Included</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-    <h2 style="text-align:center; margin-top: 2rem;">Select Your Plan</h2>
-    <div class="pricing-grid" style="margin-top:2rem;">
-      <!-- Basic Plan -->
-      <div class="pricing-card">
-        <div class="pricing-header">
-          <div class="pricing-name">Basic</div>
-          <div class="pricing-price">$99<span>/month</span></div>
-          <div class="pricing-description">Perfect for small projects & testing</div>
-        </div>
-        <ul class="pricing-features">
-          <li>10,000 API calls/month</li>
-          <li>Standard Support</li>
-          <li>2 Concurrent Requests</li>
-          <li>Basic Analytics</li>
-        </ul>
-        <a href="register.html" class="btn primary-btn">Get Started</a>
-      </div>
-
-      <!-- Pro Plan -->
-      <div class="pricing-card">
-        <div class="pricing-header">
-          <div class="pricing-name">Pro</div>
-          <div class="pricing-price">$150<span>/month</span></div>
-          <div class="pricing-description">Ideal for growing businesses</div>
-        </div>
-        <ul class="pricing-features">
-          <li>50,000 API calls/month</li>
-          <li>Priority Support</li>
-          <li>5 Concurrent Requests</li>
-          <li>Advanced Analytics</li>
-        </ul>
-        <a href="register.html" class="btn primary-btn glow">Start Free Trial</a>
-      </div>
-
-      <!-- All Access Plan -->
-      <div class="pricing-card popular">
-        <div class="popular-badge">Most Popular</div>
-        <div class="pricing-header">
-          <div class="pricing-name">All Access</div>
-          <div class="pricing-price">$299<span>/month</span></div>
-          <div class="pricing-description">Full-feature coverage</div>
-        </div>
-        <ul class="pricing-features">
-          <li>100,000 API calls/month</li>
-          <li>Priority Support</li>
-          <li>10 Concurrent Requests</li>
-          <li>Advanced + Custom Analytics</li>
-          <li>Webhook Integrations</li>
-        </ul>
-        <a href="register.html" class="btn primary-btn">Upgrade Now</a>
-      </div>
-
-      <!-- Enterprise Plan -->
-      <div class="pricing-card">
-        <div class="pricing-header">
-          <div class="pricing-name">Enterprise</div>
-          <div class="pricing-price">Custom<span> Pricing</span></div>
-          <div class="pricing-description">For large-scale operations</div>
-        </div>
-        <ul class="pricing-features">
-          <li>Unlimited API calls</li>
-          <li>24/7 Premium Support</li>
-          <li>Unlimited Concurrent Requests</li>
-          <li>Custom Analytics Dashboard</li>
-          <li>SLA Guarantee</li>
-        </ul>
-        <a href="contact.html" class="btn secondary-btn">Contact Sales</a>
       </div>
     </div>
-    <!-- New Pricing FAQ Section -->
-    <section class="pricing-faq-section container">
-      <h2 class="section-title">Pricing FAQs</h2>
-      <div class="faq-accordion">
-        <div class="faq-item">
-          <button class="faq-question">
-            How are API calls measured?
-          </button>
-          <div class="faq-answer">
-            <p>
-              Each API call counts as one credit. This includes any request made to our API endpoints, regardless of the data volume retrieved.
-            </p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            Can I upgrade or downgrade my plan at any time?
-          </button>
-          <div class="faq-answer">
-            <p>
-              Yes, you can upgrade or downgrade your plan at any time directly from your account dashboard. Changes will take effect immediately, and billing adjustments will be handled accordingly.
-            </p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            Is there a discount for annual billing?
-          </button>
-          <div class="faq-answer">
-            <p>
-              Absolutely! We offer a 15% discount for annual billing commitments. This not only saves you money but also ensures uninterrupted access to our services.
-            </p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            How does the free trial work?
-          </button>
-          <div class="faq-answer">
-            <p>
-              Our free trial provides you with 5,000 API calls over a 30-day period. This allows you to explore our platform's capabilities and determine the best plan for your needs before committing.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
 
   <!-- Footer -->
@@ -297,31 +110,5 @@
       </div>
     </div>
   </footer>
-
-  <!-- JS (Optional) -->
-  <script src="js/main.js"></script>
-
-  <!-- Optional: JavaScript for FAQ Accordion -->
-  <script>
-    document.querySelectorAll('.faq-question').forEach(button => {
-      button.addEventListener('click', () => {
-        const faqItem = button.parentElement;
-        const openItem = document.querySelector('.faq-item.active');
-
-        if (openItem && openItem !== faqItem) {
-          openItem.classList.remove('active');
-          openItem.querySelector('.faq-answer').style.maxHeight = 0;
-        }
-
-        faqItem.classList.toggle('active');
-        const answer = faqItem.querySelector('.faq-answer');
-        if (faqItem.classList.contains('active')) {
-          answer.style.maxHeight = answer.scrollHeight + 'px';
-        } else {
-          answer.style.maxHeight = 0;
-        }
-      });
-    });
-  </script>
 </body>
 </html>

@@ -2,255 +2,101 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ScrapeCompass API - Features</title>
 
-  <!-- Link to external CSS -->
+  <!-- External CSS -->
   <link rel="stylesheet" href="css/main.css" />
 
-  <!-- Font Awesome (Optional) -->
+  <!-- Font Awesome for Icons -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
   />
 </head>
-
 <body>
-  <!-- Sticky Navigation Bar -->
+  <!-- Navigation Bar -->
   <nav class="navbar">
-    <!-- Logo on the Left -->
-    <a href="index.html" class="logo">SCRAPECOMPASS</a>
-  
-    <!-- Mobile Toggle Button -->
-    <button class="mobile-toggle" aria-label="Toggle navigation" aria-expanded="false">
-      <i class="fas fa-bars"></i>
-    </button>
-  
-    <!-- Navigation Links - Center -->
-    <div class="nav-links">
-      <a href="dashboard.html" class="nav-link">API</a>
-      <a href="features.html" class="nav-link">Features</a>
-      <a href="solutions.html" class="nav-link">Solutions</a>
-      <a href="pricing.html" class="nav-link">Pricing</a>
-      <a href="documentation.html" class="nav-link">Documentation</a>
+    <div class="inner-container">
+      <a href="index.html" class="logo">SCRAPECOMPASS</a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="dashboard.html" class="nav-link">Dashboard</a>
+        <a href="features.html" class="nav-link">Features</a>
+        <a href="solutions.html" class="nav-link">Solutions</a>
+        <a href="pricing.html" class="nav-link">Pricing</a>
+        <a href="documentation.html" class="nav-link">Documentation</a>
+      </div>
     </div>
-
   </nav>
   
+  <!-- Hero Section -->
   <section class="hero">
-    <div class="hero-content">
-      <h1>Explore Our Powerful Features</h1>
-      <p class="hero-subtitle">
-        See how ScrapeCompass’s comprehensive feature set can supercharge your data extraction.
-      </p>
+    <div class="inner-container">
+      <h1 class="hero-title">Powerful Features for Your Success</h1>
+      <p class="hero-subtitle">Explore the tools and capabilities of ScrapeCompass to unlock the full potential of your data.</p>
     </div>
   </section>
 
-<main class="features-content container">
-
-
-<!-- Features Section -->
-<!-- Features Section -->
-<section class="features-section container">
-  <h2 class="section-title">Our Powerful Features</h2>
-  <div class="features-grid">
-    
-    <!-- Feature Card 1 -->
-    <div class="feature-card" data-aos="fade-up">
-      <div class="feature-icon">
-        <i class="fas fa-server"></i>
+  <!-- Features Content -->
+  <main class="features-content">
+    <div class="features-grid">
+      <div class="feature-card">
+        <i class="fas fa-bolt feature-icon"></i>
+        <h3>High-Speed Scraping</h3>
+        <p>Extract data from any website in real-time, with lightning-fast response times.</p>
       </div>
-      <h3>High-Performance Architecture</h3>
-      <p>
-        ScrapeCompass is built on a robust, cloud-based infrastructure that scales automatically.
-        Enjoy lightning-fast response times, load balancing, and an uptime guarantee
-        that keeps your data pipelines running smoothly.
-      </p>
-      <a href="#" class="btn primary-btn">Learn More</a>
-    </div>
-    
-    <!-- Feature Card 2 -->
-    <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
-      <div class="feature-icon">
-        <i class="fas fa-file-export"></i>
+      <div class="feature-card">
+        <i class="fas fa-chart-line feature-icon"></i>
+        <h3>Advanced Analytics</h3>
+        <p>Monitor your scraping performance and generate detailed reports.</p>
       </div>
-      <h3>Flexible Data Formats</h3>
-      <p>
-        Export your data as JSON, CSV, XML, or custom formats. We offer
-        configurable output to match your preferred parsing and ingestion workflows.
-      </p>
-      <a href="#" class="btn primary-btn">Learn More</a>
-    </div>
-    
-    <!-- Feature Card 3 -->
-    <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
-      <div class="feature-icon">
-        <i class="fas fa-chart-line"></i>
-      </div>
-      <h3>Advanced Analytics & Monitoring</h3>
-      <p>
-        Monitor usage in real-time, check request performance metrics,
-        and generate custom reports to stay on top of your data extraction efforts.
-      </p>
-      <a href="#" class="btn primary-btn">Learn More</a>
-    </div>
-    
-    <!-- Feature Card 4 -->
-    <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
-      <div class="feature-icon">
-        <i class="fas fa-shield-alt"></i>
-      </div>
-      <h3>Proxy Management & Security</h3>
-      <p>
-        Protect your requests with built-in proxy rotation, HTTPS encryption,
-        and IP whitelisting to ensure secure and reliable extraction.
-      </p>
-      <a href="#" class="btn primary-btn">Learn More</a>
-    </div>
-    
-    <!-- Feature Card 5 -->
-    <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
-      <div class="feature-icon">
-        <i class="fas fa-sync-alt"></i>
-      </div>
-      <h3>Real-Time Data Synchronization</h3>
-      <p>
-        Ensure your data is always up-to-date with our real-time synchronization capabilities.
-        Seamlessly integrate and update data across multiple platforms without delay.
-      </p>
-      <a href="#" class="btn primary-btn">Learn More</a>
-    </div>
-    
-    <!-- Feature Card 6 -->
-    <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
-      <div class="feature-icon">
-        <i class="fas fa-cogs"></i>
-      </div>
-      <h3>Customizable Workflows</h3>
-      <p>
-        Tailor your data extraction and processing workflows to fit your specific needs.
-        Utilize our flexible tools to design workflows that optimize your data handling.
-      </p>
-      <a href="#" class="btn primary-btn">Learn More</a>
-    </div>
-    
-  </div>
-</section>
-
-
-
-  <!-- Integration Partners Section -->
-<section class="integration-section container">
-  <h2 class="section-title">Our Integration Partners</h2>
-  <div class="integration-logos">
-    <div class="integration-logo">
-      <img src="images/integration1.png" alt="Partner 1" />
-    </div>
-    <div class="integration-logo">
-      <img src="images/integration2.png" alt="Partner 2" />
-    </div>
-    <div class="integration-logo">
-      <img src="images/integration3.png" alt="Partner 3" />
-    </div>
-    <div class="integration-logo">
-      <img src="images/integration4.png" alt="Partner 4" />
-    </div>
-    <div class="integration-logo">
-      <img src="images/integration5.png" alt="Partner 5" />
-    </div>
-  </div>
-</section>
-
-<!-- Testimonials Section -->
-<section class="testimonials-section container">
-  <h2 class="section-title">What Our Users Say</h2>
-  <div class="testimonials-grid">
-    <div class="testimonial-card">
-      <p class="testimonial-text">
-        "ScrapeCompass has revolutionized the way we handle data extraction. The API is fast, reliable, and incredibly easy to integrate."
-      </p>
-      <div class="testimonial-author">
-        <img src="images/user1.jpg" alt="User 1" class="testimonial-avatar"/>
-        <div>
-          <h4>Jane Doe</h4>
-          <span>Data Analyst at TechCorp</span>
-        </div>
+      <div class="feature-card">
+        <i class="fas fa-shield-alt feature-icon"></i>
+        <h3>Built-In Security</h3>
+        <p>Enhanced security measures to keep your data safe and compliant.</p>
       </div>
     </div>
+  </main>
 
-    <div class="testimonial-card">
-      <p class="testimonial-text">
-        "The advanced analytics and monitoring tools provided by ScrapeCompass have significantly improved our data pipeline efficiency."
-      </p>
-      <div class="testimonial-author">
-        <img src="images/user2.jpg" alt="User 2" class="testimonial-avatar"/>
-        <div>
-          <h4>John Smith</h4>
-          <span>CTO at InnovateX</span>
-        </div>
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="register.html">Register</a></li>
+          <li><a href="terms-and-conditions.html">Terms and Conditions</a></li>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Features</h4>
+        <ul>
+          <li><a href="features.html">Reliable Data Extraction</a></li>
+          <li><a href="easy-integration.html">Easy Integration</a></li>
+          <li><a href="solutions.html">Scalable Solutions</a></li>
+          <li><a href="pricing.html">Flexible Pricing Plans</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Documentation</h4>
+        <ul>
+          <li><a href="documentation.html">API Documentation</a></li>
+          <li><a href="guides.html">User Guides</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li>Email: <a href="mailto:support@scrapecompass.com">support@scrapecompass.com</a></li>
+          <li>Phone: <a href="tel:+18554402242">(855) 440-2242</a></li>
+        </ul>
       </div>
     </div>
-
-    <div class="testimonial-card">
-      <p class="testimonial-text">
-        "Excellent customer support and comprehensive documentation make ScrapeCompass a top choice for our data extraction needs."
-      </p>
-      <div class="testimonial-author">
-        <img src="images/user3.jpg" alt="User 3" class="testimonial-avatar"/>
-        <div>
-          <h4>Alice Johnson</h4>
-          <span>Product Manager at MarketGuru</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-  <!-- Add more feature sections as needed -->
-</main>
-<!-- Footer -->
-<footer>
-  <div class="footer-container">
-    <div class="footer-section">
-      <h4>Company</h4>
-      <ul>
-        <li><a href="login.html">Login</a></li>
-        <li><a href="register.html">Register</a></li>
-      <li><a href="terms-and-conditions.html">Terms and Conditions</a></li>
-      <li><a href="privacy-policy.html">Privacy Policy</a></li>
-    </ul>
-    </div>
-    <div class="footer-section">
-      <h4>Features</h4>
-      <ul>
-        <li><a href="features.html">Reliable Data Extraction</a></li>
-        <li><a href="easy-integration.html">Easy Integration</a></li>
-        <li><a href="solutions.html">Scalable Solutions</a></li>
-        <li><a href="pricing.html">Flexible Pricing Plans</a></li>
-      </ul>
-    </div>
-    <div class="footer-section">
-      <h4>Documentation</h4>
-      <ul>
-        <li><a href="documentation.html">API Documentation</a></li>
-        <li><a href="guides.html">User Guides</a></li>
-      </ul>
-    </div>
-    <div class="footer-section">
-      <h4>Contact</h4>
-      <ul>
-        <li><a href="about.html">Our Story</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
-        <li>Email: <a href="mailto:support@scrapecompass.com">support@scrapecompass.com</a></li>
-        <li>Phone: <a href="tel:+18554402242">(855) 440-2242</a></li>
-      
-      </ul>
-    </div>
-  </div>
-</footer>
-
-
-  <!-- JS (Optional) -->
-  <script src="js/main.js"></script>
+  </footer>
 </body>
 </html>

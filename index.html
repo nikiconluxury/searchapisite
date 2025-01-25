@@ -1,353 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  <title>ScrapeCompass API - Transform Web Data</title>
-
-  <!-- Link to external CSS -->
-  <link rel="stylesheet" href="css/main.css" />
-
-  <!-- Font Awesome (Optional) -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-  />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ScrapeCompass API - Home</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-
 <body>
-  <!-- Sticky Navigation Bar -->
+  <!-- Navbar -->
   <nav class="navbar">
-    <!-- Logo on the Left -->
-    <a href="index.html" class="logo">SCRAPECOMPASS</a>
-  
-    <!-- Mobile Toggle Button -->
-    <button class="mobile-toggle" aria-label="Toggle navigation" aria-expanded="false">
-      <i class="fas fa-bars"></i>
-    </button>
-  
-    <!-- Navigation Links - Center -->
-    <div class="nav-links">
-      <a href="dashboard.html" class="nav-link">API</a>
-      <a href="features.html" class="nav-link">Features</a>
-      <a href="solutions.html" class="nav-link">Solutions</a>
-      <a href="pricing.html" class="nav-link">Pricing</a>
-      <a href="documentation.html" class="nav-link">Documentation</a>
+    <div class="inner-container">
+      <a href="index.html" class="logo">SCRAPECOMPASS</a>
+      <div class="hamburger" id="hamburger">
+        <i class="fas fa-bars"></i>
+      </div>
+      <div class="nav-links" id="nav-links">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="dashboard.html" class="nav-link">Dashboard</a>
+        <a href="features.html" class="nav-link">Features</a>
+        <a href="solutions.html" class="nav-link">Solutions</a>
+        <a href="pricing.html" class="nav-link">Pricing</a>
+        <a href="documentation.html" class="nav-link">Documentation</a>
+      </div>
     </div>
-
   </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="inner-container">
+        <h1>Transform Web Data Into Insights</h1>
+        <p>Access web data effortlessly with our powerful API. Built for developers, designed for scale.</p>
+        <div class="cta-buttons">
+          <a href="register.html" class="btn primary-btn">Get Started Free</a>
+          <a href="login.html" class="btn secondary-btn">Login</a>
+        </div>
+      </div>
+    </section>
   
-    
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Transform Web Data<br />Into Insights</h1>
-      <p class="hero-subtitle">
-        Access web data effortlessly with our powerful API.<br />
-        Built for developers, designed for scale.
-      </p>
-      <div class="cta-buttons">
-        <a href="register.html" class="btn primary-btn">Get Started Free</a>
-        <a href="login.html" class="btn secondary-btn">Login</a>
+    <!-- B2B Solutions Section -->
+    <section class="b2b-solutions">
+      <h2>B2B Solutions</h2>
+      <p>Empower your business with scalable and customizable data extraction solutions.</p>
+      <section class="solutions-grid">
+        <div class="solution-block">
+          <h3>Enterprise Integration</h3>
+          <p>Seamlessly integrate ScrapeCompass API with your existing workflows.</p>
+        </div>
+        <div class="solution-block">
+          <h3>Data-Driven Strategies</h3>
+          <p>Leverage data to optimize processes and inform strategic decisions.</p>
+        </div>
+        <div class="solution-block">
+          <h3>Customizable Dashboards</h3>
+          <p>Create real-time analytics tailored to your business needs.</p>
+        </div>
+        <div class="solution-block">
+          <h3>Dedicated Account Managers</h3>
+          <p>Receive personalized support to achieve your business goals.</p>
+        </div>
+        <div class="solution-block">
+          <h3>Scalable API</h3>
+          <p>Handle millions of requests effortlessly with our scalable infrastructure.</p>
+        </div>
+        <div class="solution-block">
+          <h3>Secure Proxies</h3>
+          <p>Handle millions of requests effortlessly with our scalable infrastructure.</p>
+        </div>
+      </section>
+  <!-- Why Choose Us Section -->
+  <section class="why-choose-us">
+    <h2>Why Choose Us</h2>
+    <div class="accordion">
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <span>Reliable Data Extraction</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="accordion-content">
+          <p>Scrape data with precision from any website, ensuring accuracy and reliability for all your needs.</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <span>Scalable Solutions</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="accordion-content">
+          <p>Our platform scales effortlessly to handle projects of all sizes, from small startups to enterprise-level operations.</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <span>24/7 Customer Support</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="accordion-content">
+          <p>Receive round-the-clock assistance from our dedicated support team to resolve your queries anytime.</p>
+        </div>
       </div>
     </div>
   </section>
+  <footer>
+    <div class="footer-container">
+      <!-- Company Section -->
+      <div class="footer-section">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
   
+      <!-- Features Section -->
+      <div class="footer-section">
+        <h4>Features</h4>
+        <ul>
+          <li><a href="features.html">Reliable Data Extraction</a></li>
+          <li><a href="features.html">Scalable Solutions</a></li>
+          <li><a href="pricing.html">Flexible Pricing</a></li>
+          <li><a href="integrations.html">Easy Integration</a></li>
+        </ul>
+      </div>
+  
+      <!-- Documentation Section -->
+      <div class="footer-section">
+        <h4>Documentation</h4>
+        <ul>
+          <li><a href="documentation.html">API Documentation</a></li>
+          <li><a href="guides.html">User Guides</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+  
+      <!-- Contact Section -->
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <ul>
+          <li>Email: <a href="mailto:support@scrapecompass.com">support@scrapecompass.com</a></li>
+          <li>Phone: <a href="tel:+18554402242">(855) 440-2242</a></li>
+        </ul>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      <p>&copy; 2025 ScrapeCompass. All rights reserved.</p>
+    </div>
+  </footer>
+  
+  
+  <script>
+    // Accordion toggle functionality
+    document.addEventListener("DOMContentLoaded", () => {
+      const accordionItems = document.querySelectorAll(".accordion-item");
 
+      accordionItems.forEach((item) => {
+        const header = item.querySelector(".accordion-header");
 
-<!-- Redesigned B2B Solutions Section with Card-Based Layout -->
-<section class="b2b-solutions-section container">
-  <h2 class="section-title">B2B Solutions</h2>
-  <p class="section-subtitle">
-    Empower your business with our scalable and customizable data extraction solutions designed for enterprises.
-  </p>
-  <div class="b2b-solutions-grid">
-    <!-- B2B Solution Card 1 -->
-    <div class="b2b-solution-card">
-      <div class="b2b-solution-icon">
-        <i class="fas fa-building"></i>
-      </div>
-      <h3>Enterprise Integration</h3>
-      <p>
-        Seamlessly integrate ScrapeCompass API with your existing business systems and workflows to enhance operational efficiency.
-      </p>
-    </div>
-    <!-- B2B Solution Card 2 -->
-    <div class="b2b-solution-card">
-      <div class="b2b-solution-icon">
-        <i class="fas fa-chart-pie"></i>
-      </div>
-      <h3>Data-Driven Strategies</h3>
-      <p>
-        Leverage extracted data to inform strategic decisions, optimize processes, and drive business growth.
-      </p>
-    </div>
-    <!-- B2B Solution Card 3 -->
-    <div class="b2b-solution-card">
-      <div class="b2b-solution-icon">
-        <i class="fas fa-tools"></i>
-      </div>
-      <h3>Customizable Dashboards</h3>
-      <p>
-        Access and customize dashboards that provide real-time insights and analytics tailored to your business needs.
-      </p>
-    </div>
-    <!-- B2B Solution Card 4 -->
-    <div class="b2b-solution-card">
-      <div class="b2b-solution-icon">
-        <i class="fas fa-users-cog"></i>
-      </div>
-      <h3>Dedicated Account Managers</h3>
-      <p>
-        Receive personalized support from dedicated account managers who understand your business objectives and challenges.
-      </p>
-    </div>
-  </div>
-</section>
+        header.addEventListener("click", () => {
+          const openItem = document.querySelector(".accordion-item.active");
 
-<!-- Features Section with Accordion Layout -->
-<section id="features" class="features">
-  <div class="container">
-    <h2 class="section-title">Powerful Features for Your Success</h2>
-    <p class="section-subtitle">
-      Everything you need to extract and process web data efficiently
-    </p>
-    <div class="features-accordion">
-      <!-- Accordion Item 1 -->
-      <div class="accordion-item">
-        <button class="accordion-header" aria-expanded="true" aria-controls="accordion-content-1" id="accordion-header-1">
-          <div class="header-content">
-            <i class="fas fa-bolt"></i> High Performance
-          </div>
-          <i class="fas fa-chevron-down chevron"></i>
-        </button>
-        <div class="accordion-content" id="accordion-content-1" role="region" aria-labelledby="accordion-header-1">
-          <p>Lightning-fast response times with 99.9% uptime and auto-scaling.</p>
-          <ul>
-            <li>Ultra-fast response times</li>
-            <li>Automatic retry mechanism</li>
-            <li>Load balancing</li>
-          </ul>
-        </div>
-      </div>
-      <!-- Accordion Item 2 -->
-      <div class="accordion-item">
-        <button class="accordion-header" aria-expanded="false" aria-controls="accordion-content-2" id="accordion-header-2">
-          <div class="header-content">
-            <i class="fas fa-shield-alt"></i> Advanced Security
-          </div>
-          <i class="fas fa-chevron-down chevron"></i>
-        </button>
-        <div class="accordion-content" id="accordion-content-2" role="region" aria-labelledby="accordion-header-2">
-          <p>We prioritize your data's security with state-of-the-art measures.</p>
-        </div>
-      </div>
-      <!-- Accordion Item 3 -->
-      <div class="accordion-item">
-        <button class="accordion-header" aria-expanded="false" aria-controls="accordion-content-3" id="accordion-header-3">
-          <div class="header-content">
-            <i class="fas fa-users-cog"></i> Dedicated Support
-          </div>
-          <i class="fas fa-chevron-down chevron"></i>
-        </button>
-        <div class="accordion-content" id="accordion-content-3" role="region" aria-labelledby="accordion-header-3">
-          <p>Our support team is available 24/7 to assist you with any inquiries.</p>
-        </div>
-      </div>
-      <!-- Add more accordion items as needed -->
-    </div>
-  </div>
-</section>
+          if (openItem && openItem !== item) {
+            openItem.classList.remove("active");
+            openItem.querySelector(".accordion-content").style.maxHeight = null;
+          }
 
+          item.classList.toggle("active");
+          const content = item.querySelector(".accordion-content");
 
-<!-- Combined Advanced Features Section -->
-<section class="advanced-features-section container">
-  <h2 class="section-title">Advanced Features</h2>
-  <p class="section-subtitle">
-    Enhance your data extraction capabilities with our premium tools and flexible credit management system.
-  </p>
-  <div class="advanced-features-list">
-    <!-- Feature Item 1 -->
-    <div class="feature-item">
-      <div class="feature-icon">
-        <i class="fas fa-network-wired"></i>
-      </div>
-      <div class="feature-content">
-        <h3>Seamless IP Rotation</h3>
-        <p>
-          Our intelligent IP rotation system automatically switches IP addresses to prevent blocking and maintain access to target websites.
-        </p>
-      </div>
-    </div>
-    <!-- Feature Item 2 -->
-    <div class="feature-item">
-      <div class="feature-icon">
-        <i class="fas fa-shield-virus"></i>
-      </div>
-      <div class="feature-content">
-        <h3>Secure Proxies</h3>
-        <p>
-          Utilize our secure proxies to mask your identity and protect your data extraction activities from potential threats.
-        </p>
-      </div>
-    </div>
-    <!-- Feature Item 3 -->
-    <div class="feature-item">
-      <div class="feature-icon">
-        <i class="fas fa-cogs"></i>
-      </div>
-      <div class="feature-content">
-        <h3>Custom Proxy Solutions</h3>
-        <p>
-          Get tailor-made proxy configurations that align with your specific scraping requirements and operational scales.
-        </p>
-      </div>
-    </div>
-    <!-- Feature Item 4 -->
-    <div class="feature-item">
-      <div class="feature-icon">
-        <i class="fas fa-shopping-cart"></i>
-      </div>
-      <div class="feature-content">
-        <h3>Buy Credits</h3>
-        <p>
-          Easily purchase additional credits to scale your data extraction without any hassle. Our secure payment gateway ensures safe transactions every time.
-        </p>
-      </div>
-    </div>
-    <!-- Feature Item 5 -->
-    <div class="feature-item">
-      <div class="feature-icon">
-        <i class="fas fa-redo-alt"></i>
-      </div>
-      <div class="feature-content">
-        <h3>Refill Credits</h3>
-        <p>
-          Keep your projects running smoothly by refilling your credits whenever needed. Set up automatic refills to never run out of credits during critical operations.
-        </p>
-      </div>
-    </div>
-    <!-- Feature Item 6 -->
-    <div class="feature-item">
-      <div class="feature-icon">
-        <i class="fas fa-user-cog"></i>
-      </div>
-      <div class="feature-content">
-        <h3>Manage Usage</h3>
-        <p>
-          Monitor and manage your credit usage through our intuitive dashboard. Get detailed reports and insights to optimize your data extraction strategies.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="why-choose-section">
-  <h2 class="section-title">Why Choose Us</h2>
-  <p class="section-subtitle">
-    Discover the reasons why our clients trust us for their data extraction needs.
-  </p>
-  <div class="why-choose-grid">
-    <div class="why-choose-item">
-      <div class="why-choose-icon">
-        <i class="fas fa-check-circle"></i>
-      </div>
-      <h3>Reliable Data Extraction</h3>
-      <p>Accurate and timely data extraction from any website.</p>
-    </div>
-    <div class="why-choose-item">
-      <div class="why-choose-icon">
-        <i class="fas fa-chart-line"></i>
-      </div>
-      <h3>Scalable Solutions</h3>
-      <p>Whether you need to scrape a few pages or millions, our service scales with your needs.</p>
-    </div>
-    <div class="why-choose-item">
-      <div class="why-choose-icon">
-        <i class="fas fa-headset"></i>
-      </div>
-      <h3>24/7 Customer Support</h3>
-      <p>Our dedicated support team is available around the clock to assist you.</p>
-    </div>
-    <div class="why-choose-item">
-      <div class="why-choose-icon">
-        <i class="fas fa-book"></i>
-      </div>
-      <h3>Comprehensive Documentation</h3>
-      <p>Detailed guides and resources to help you make the most of our services.</p>
-    </div>
-    <div class="why-choose-item">
-      <div class="why-choose-icon">
-        <i class="fas fa-dollar-sign"></i>
-      </div>
-      <h3>Flexible Pricing Plans</h3>
-      <p>Choose from a variety of pricing plans that fit your budget and requirements.</p>
-    </div>
-    <div class="why-choose-item">
-      <div class="why-choose-icon">
-        <i class="fas fa-shield-alt"></i>
-      </div>
-      <h3>Advanced Security</h3>
-      <p>We prioritize your data's security with state-of-the-art measures.</p>
-    </div>
-    <div class="why-choose-item">
-      <div class="why-choose-icon">
-        <i class="fas fa-tools"></i>
-      </div>
-      <h3>Customizable Integrations</h3>
-      <p>Adapt our services to fit seamlessly into your existing workflows.</p>
-    </div>
-    <div class="why-choose-item">
-      <div class="why-choose-icon">
-        <i class="fas fa-clock"></i>
-      </div>
-      <h3>Real-Time Insights</h3>
-      <p>Access live data to make timely, informed decisions for your business.</p>
-    </div>
-  </div>
-</section>
-
-<!-- Footer -->
-<footer>
-  <div class="footer-container">
-    <div class="footer-section">
-      <h4>Company</h4>
-      <ul>
-        <li><a href="login.html">Login</a></li>
-        <li><a href="register.html">Register</a></li>
-        <li><a href="terms-and-conditions.html">Terms and Conditions</a></li>
-        <li><a href="privacy-policy.html">Privacy Policy</a></li>
-      </ul>
-    </div>
-    <div class="footer-section">
-      <h4>Features</h4>
-      <ul>
-        <li><a href="features.html">Reliable Data Extraction</a></li>
-        <li><a href="easy-integration.html">Easy Integration</a></li>
-        <li><a href="solutions.html">Scalable Solutions</a></li>
-        <li><a href="pricing.html">Flexible Pricing Plans</a></li>
-      </ul>
-    </div>
-    <div class="footer-section">
-      <h4>Documentation</h4>
-      <ul>
-        <li><a href="documentation.html">API Documentation</a></li>
-        <li><a href="guides.html">User Guides</a></li>
-      </ul>
-    </div>
-    <div class="footer-section">
-      <h4>Contact</h4>
-      <ul>
-        <li><a href="about.html">Our Story</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
-        <li>Email: <a href="mailto:support@scrapecompass.com">support@scrapecompass.com</a></li>
-        <li>Phone: <a href="tel:+18554402242">(855) 440-2242</a></li>
-      </ul>
-    </div>
-  </div>
-</footer>
-
-<!-- JS (Optional) -->
-<script src="js/main.js"></script>
-
-
+          if (item.classList.contains("active")) {
+            content.style.maxHeight = content.scrollHeight + "px";
+          } else {
+            content.style.maxHeight = null;
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

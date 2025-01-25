@@ -2,135 +2,108 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  <title>ScrapeCompass API - Sign On</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ScrapeCompass - Login & Register</title>
 
-  <!-- Link to external CSS -->
+  <!-- Link to External CSS -->
   <link rel="stylesheet" href="css/main.css" />
 
-  <!-- Font Awesome (Optional) -->
+  <!-- Font Awesome for Icons -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
   />
 </head>
 <body>
-
-  <!-- Sticky Navigation Bar -->
+  <!-- Navigation Bar -->
   <nav class="navbar">
-    <!-- Logo on the Left -->
-    <a href="index.html" class="logo">SCRAPECOMPASS</a>
-  
-    <!-- Mobile Toggle Button -->
-    <button class="mobile-toggle" aria-label="Toggle navigation" aria-expanded="false">
-      <i class="fas fa-bars"></i>
-    </button>
-  
-    <!-- Navigation Links - Center -->
-    <div class="nav-links">
-      <a href="#" class="nav-link">API</a>
-      <a href="features.html" class="nav-link">Features</a>
-      <a href="solutions.html" class="nav-link">Solutions</a>
-      <a href="pricing.html" class="nav-link">Pricing</a>
-      <a href="documentation.html" class="nav-link">Documentation</a>
+    <div class="inner-container">
+      <a href="index.html" class="logo">SCRAPECOMPASS</a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="dashboard.html" class="nav-link">Dashboard</a>
+        <a href="features.html" class="nav-link">Features</a>
+        <a href="solutions.html" class="nav-link">Solutions</a>
+        <a href="pricing.html" class="nav-link">Pricing</a>
+        <a href="documentation.html" class="nav-link">Documentation</a>
+      </div>
     </div>
   </nav>
-    <div id="alertBox" class="alert">
-    <span class="icon"></span>
+
+  <!-- Alert Box -->
+  <div id="alertBox" class="alert-box" style="display: none;">
+    <i class="icon"></i>
     <span class="message"></span>
-    <button onclick="closeAlert()">×</button>
+    <button onclick="closeAlert()" class="close-btn">&times;</button>
   </div>
 
   <!-- Hero Section -->
   <section class="hero">
-    <div class="hero-content">
-      <h1>Welcome Back!</h1>
-      <p>Your reliable web scraping solution for scalable, easy, and fast data extraction.</p>
-      </div>
+    <div class="inner-container">
+      <h1>Welcome!</h1>
+      <p>Login or register to access your web scraping dashboard and manage your data extraction.</p>
     </div>
   </section>
-  <!-- Login Section -->
-  <section id="login-section">
-    <h2 class="section-title">Login</h2>
-    <p id="login-error" class="error-message"></p>
-    <form id="login-form">
-      <label for="login-username">Username</label>
-      <input type="text" id="login-username" required>
-      <label for="login-password">Password</label>
-      <input type="password" id="login-password" required>
-      <button type="button" onclick="loginUser()">Login</button>
-      <p>Don't have an account? <a href="#" onclick="toggleToRegister()">Register here</a>.</p>
-    </form>
 
-  </section>
-
-  <!-- Register Section -->
-  <section id="register-section" style="display: none;">
-    <h2 class="section-title">Register</h2>
-    <form id="register-form">
-      <label for="register-username">Username</label>
-      <input type="text" id="register-username" required>
-      <label for="register-password">Password</label>
-      <input type="password" id="register-password" required>
-      <button type="button" onclick="registerUser()">Register</button>
-      <p>Already have an account? <a href="#" onclick="toggleToLogin()">Login here</a>.</p>
-    </form>
-    <p id="register-error" class="error-message"></p>
-  </section>
-
-  <section id="features" class="features">
+  <!-- Login and Register Section -->
+  <section id="auth-section">
     <div class="container">
-      <h2 class="section-title">Frequent Questions</h2>
-      <p class="section-subtitle">
-        Everything you need to extract and process web data efficiently
-      </p>
-      <div class="features-accordion">
-        <!-- Accordion Item 1 -->
-        <div class="accordion-item">
-          <button class="accordion-header" aria-expanded="true" aria-controls="accordion-content-1" id="accordion-header-1">
-            <div class="header-content">
-              <i class="fas fa-bolt"></i> High Performance
-            </div>
-            <i class="fas fa-chevron-down chevron"></i>
-          </button>
-          <div class="accordion-content" id="accordion-content-1" role="region" aria-labelledby="accordion-header-1">
-            <p>Lightning-fast response times with 99.9% uptime and auto-scaling.</p>
-            <ul>
-              <li>Ultra-fast response times</li>
-              <li>Automatic retry mechanism</li>
-              <li>Load balancing</li>
-            </ul>
-          </div>
-        </div>
-        <!-- Accordion Item 2 -->
-        <div class="accordion-item">
-          <button class="accordion-header" aria-expanded="false" aria-controls="accordion-content-2" id="accordion-header-2">
-            <div class="header-content">
-              <i class="fas fa-shield-alt"></i> Advanced Security
-            </div>
-            <i class="fas fa-chevron-down chevron"></i>
-          </button>
-          <div class="accordion-content" id="accordion-content-2" role="region" aria-labelledby="accordion-header-2">
-            <p>We prioritize your data's security with state-of-the-art measures.</p>
-          </div>
-        </div>
-        <!-- Accordion Item 3 -->
-        <div class="accordion-item">
-          <button class="accordion-header" aria-expanded="false" aria-controls="accordion-content-3" id="accordion-header-3">
-            <div class="header-content">
-              <i class="fas fa-users-cog"></i> Dedicated Support
-            </div>
-            <i class="fas fa-chevron-down chevron"></i>
-          </button>
-          <div class="accordion-content" id="accordion-content-3" role="region" aria-labelledby="accordion-header-3">
-            <p>Our support team is available 24/7 to assist you with any inquiries.</p>
-          </div>
-        </div>
-        <!-- Add more accordion items as needed -->
+      <!-- Login Form -->
+      <div id="login-form" class="auth-form">
+        <h2 class="section-title">Login</h2>
+        <form onsubmit="loginUser(event)">
+          <label for="login-username">Username</label>
+          <input
+            type="text"
+            id="login-username"
+            name="username"
+            placeholder="Enter your username"
+            required
+          />
+          <label for="login-password">Password</label>
+          <input
+            type="password"
+            id="login-password"
+            name="password"
+            placeholder="Enter your password"
+            required
+          />
+          <button type="submit" class="primary-btn">Login</button>
+        </form>
+        <p>
+          Don't have an account? <a href="#" onclick="toggleToRegister()">Register here</a>.
+        </p>
+      </div>
+
+      <!-- Register Form -->
+      <div id="register-form" class="auth-form" style="display: none;">
+        <h2 class="section-title">Register</h2>
+        <form onsubmit="registerUser(event)">
+          <label for="register-username">Username</label>
+          <input
+            type="text"
+            id="register-username"
+            name="username"
+            placeholder="Create a username"
+            required
+          />
+          <label for="register-password">Password</label>
+          <input
+            type="password"
+            id="register-password"
+            name="password"
+            placeholder="Create a password"
+            required
+          />
+          <button type="submit" class="primary-btn">Register</button>
+        </form>
+        <p>
+          Already have an account? <a href="#" onclick="toggleToLogin()">Login here</a>.
+        </p>
       </div>
     </div>
   </section>
-  
+
   <!-- Footer -->
   <footer>
     <div class="footer-container">
@@ -157,9 +130,182 @@
       </div>
     </div>
   </footer>
-<!-- Include JavaScript -->
-<script src="js/alert.js"></script>
 
-  <script src="js/main.js"></script>
+  <!-- Script Section -->
+  <script>
+    // Show Alert
+    function showAlert(status, message) {
+      const alertBox = document.getElementById("alertBox");
+      const icon = alertBox.querySelector(".icon");
+      const messageSpan = alertBox.querySelector(".message");
+
+      messageSpan.innerText = message;
+
+      alertBox.className = `alert-box ${status}`;
+      icon.className = status === "success" ? "icon fas fa-check-circle" : "icon fas fa-exclamation-circle";
+      alertBox.style.display = "flex";
+
+      setTimeout(() => {
+        alertBox.style.display = "none";
+      }, 5000);
+    }
+
+    // Close Alert
+    function closeAlert() {
+      document.getElementById("alertBox").style.display = "none";
+    }
+
+    // Toggle Between Login and Register
+    function toggleToLogin() {
+      document.getElementById("login-form").style.display = "block";
+      document.getElementById("register-form").style.display = "none";
+    }
+
+    function toggleToRegister() {
+      document.getElementById("login-form").style.display = "none";
+      document.getElementById("register-form").style.display = "block";
+    }
+
+    // Login Function
+    async function loginUser(event) {
+      event.preventDefault();
+      const username = document.getElementById("login-username").value;
+      const password = document.getElementById("login-password").value;
+
+      try {
+        const response = await fetch(`${API_URL}/token`, {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams({ username, password }),
+        });
+
+        if (response.ok) {
+          const data = await response.json();
+          localStorage.setItem("access_token", data.access_token);
+          showAlert("success", "Login successful! Redirecting...");
+          setTimeout(() => window.location.href = "dashboard.html", 2000);
+        } else {
+          throw new Error("Invalid username or password");
+        }
+      } catch (error) {
+        showAlert("error", error.message);
+      }
+    }
+
+    // Register Function
+    async function registerUser(event) {
+      event.preventDefault();
+      const username = document.getElementById("register-username").value;
+      const password = document.getElementById("register-password").value;
+
+      try {
+        const response = await fetch(`${API_URL}/register`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ username, password }),
+        });
+
+        if (response.ok) {
+          showAlert("success", "Registration successful! Redirecting to login...");
+          setTimeout(toggleToLogin, 2000);
+        } else {
+          const errorData = await response.json();
+          throw new Error(errorData.detail || "Registration failed");
+        }
+      } catch (error) {
+        showAlert("error", error.message);
+      }
+    }
+  </script>
+
+
+  <!-- Script Section -->
+  <script>
+
+
+    // Show Alert
+    function showAlert(status, message) {
+      const alertBox = document.getElementById("alertBox");
+      const icon = alertBox.querySelector(".icon");
+      const messageSpan = alertBox.querySelector(".message");
+
+      messageSpan.innerText = message;
+
+      alertBox.className = `alert-box ${status}`;
+      icon.className = status === "success" ? "icon fas fa-check-circle" : "icon fas fa-exclamation-circle";
+      alertBox.style.display = "flex";
+
+      setTimeout(() => {
+        alertBox.style.display = "none";
+      }, 5000);
+    }
+
+    // Close Alert
+    function closeAlert() {
+      document.getElementById("alertBox").style.display = "none";
+    }
+
+    // Toggle Between Login and Register
+    function toggleToLogin() {
+      document.getElementById("login-form").style.display = "block";
+      document.getElementById("register-form").style.display = "none";
+    }
+
+    function toggleToRegister() {
+      document.getElementById("login-form").style.display = "none";
+      document.getElementById("register-form").style.display = "block";
+    }
+    const API_URL = "https://solid-doodle-wrrrg7gqj56x259pj-8000.app.github.dev";
+    // Login Function
+    async function loginUser(event) {
+      event.preventDefault();
+      const username = document.getElementById("login-username").value;
+      const password = document.getElementById("login-password").value;
+
+      try {
+        const response = await fetch(`${API_URL}/token`, {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams({ username, password }),
+        });
+
+        if (response.ok) {
+          const data = await response.json();
+          localStorage.setItem("access_token", data.access_token);
+          showAlert("success", "Login successful! Redirecting...");
+          setTimeout(() => window.location.href = "dashboard.html", 2000);
+        } else {
+          throw new Error("Invalid username or password");
+        }
+      } catch (error) {
+        showAlert("error", error.message);
+      }
+    }
+
+    // Register Function
+    async function registerUser(event) {
+      event.preventDefault();
+      const username = document.getElementById("register-username").value;
+      const password = document.getElementById("register-password").value;
+
+      try {
+        const response = await fetch(`${API_URL}/register`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ username, password }),
+        });
+
+        if (response.ok) {
+          showAlert("success", "Registration successful! Redirecting to login...");
+          setTimeout(toggleToLogin, 2000);
+        } else {
+          const errorData = await response.json();
+          throw new Error(errorData.detail || "Registration failed");
+        }
+      } catch (error) {
+        showAlert("error", error.message);
+      }
+    }
+  </script>
 </body>
 </html>

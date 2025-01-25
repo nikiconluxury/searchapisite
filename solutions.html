@@ -2,227 +2,100 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ScrapeCompass API - Solutions</title>
 
-  <!-- Link to external CSS -->
+  <!-- External CSS -->
   <link rel="stylesheet" href="css/main.css" />
 
-  <!-- Font Awesome (Optional) -->
+  <!-- Font Awesome for Icons -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
   />
 </head>
-
 <body>
-  <!-- Sticky Navigation Bar -->
+  <!-- Fixed Navigation Bar -->
   <nav class="navbar">
-    <!-- Logo on the Left -->
-    <a href="index.html" class="logo">SCRAPECOMPASS</a>
-  
-    <!-- Mobile Toggle Button -->
-    <button class="mobile-toggle" aria-label="Toggle navigation" aria-expanded="false">
-      <i class="fas fa-bars"></i>
-    </button>
-  
-    <!-- Navigation Links - Center -->
-    <div class="nav-links">
-      <a href="dashboard.html" class="nav-link">API</a>
-      <a href="features.html" class="nav-link">Features</a>
-      <a href="solutions.html" class="nav-link">Solutions</a>
-      <a href="pricing.html" class="nav-link">Pricing</a>
-      <a href="documentation.html" class="nav-link">Documentation</a>
+    <div class="inner-container">
+      <a href="index.html" class="logo">SCRAPECOMPASS</a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="dashboard.html" class="nav-link">Dashboard</a>
+        <a href="features.html" class="nav-link">Features</a>
+        <a href="solutions.html" class="nav-link">Solutions</a>
+        <a href="pricing.html" class="nav-link">Pricing</a>
+        <a href="documentation.html" class="nav-link">Documentation</a>
+      </div>
     </div>
-
   </nav>
   
-  
-    
+
+  <!-- Hero Section -->
   <section class="hero">
-    <div class="hero-content">
-      <h1>Solutions Tailored to Your Needs</h1>
+    <div class="inner-container">
+      <h1 class="hero-title">Solutions Tailored to Your Needs</h1>
       <p class="hero-subtitle">
         Discover how ScrapeCompass’s flexible platform solves real-world challenges across industries.
       </p>
     </div>
   </section>
-  <!-- Solutions Content Section -->
-  <main class="solutions-content container">
-    <!-- Solution Blocks Container -->
-    <div class="solution-blocks">
-      <!-- Existing Solution Block 1 -->
-      <section class="solution-block">
-        <div class="solution-icon">
-          <i class="fas fa-briefcase"></i>
-        </div>
-        <h2>E-commerce Data Extraction</h2>
-        <p>
-          Automatically gather product listings, prices, and reviews from top marketplaces to power your own analytics,
-          price tracking, or inventory management solutions.
-        </p>
-        <a href="register.html" class="btn secondary-btn">Get Started</a>
-      </section>
 
-      <!-- Existing Solution Block 2 -->
-      <section class="solution-block">
-        <div class="solution-icon">
-          <i class="fas fa-chart-bar"></i>
+  <!-- Solutions Content -->
+  <main class="solutions-content">
+    <div class="inner-container">
+      <div class="solution-blocks">
+        <!-- Solution Block 1 -->
+        <div class="solution-block">
+          <div class="solution-icon">
+            <i class="fas fa-shopping-cart"></i>
+          </div>
+          <h2>E-commerce Data Extraction</h2>
+          <p>
+            Automatically gather product listings, prices, and reviews from top marketplaces to power your analytics and price tracking.
+          </p>
+          <a href="register.html" class="btn">Get Started</a>
         </div>
-        <h2>Competitive Market Analysis</h2>
-        <p>
-          Monitor competitor pricing, marketing campaigns, or product changes in real-time. Leverage ScrapeCompass’s
-          scalable API to keep your competitive insights up to date.
-        </p>
-        <a href="pricing.html" class="btn secondary-btn">Explore Pricing</a>
-      </section>
 
-      <!-- Existing Solution Block 3 -->
-      <section class="solution-block">
-        <div class="solution-icon">
-          <i class="fas fa-graduation-cap"></i>
+        <!-- Solution Block 2 -->
+        <div class="solution-block">
+          <div class="solution-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h2>Market Analysis</h2>
+          <p>
+            Monitor competitors in real-time by tracking pricing, campaigns, or product updates. Gain a competitive edge effortlessly.
+          </p>
+          <a href="pricing.html" class="btn">Explore Pricing</a>
         </div>
-        <h2>Academic & Research Projects</h2>
-        <p>
-          Quickly collect large datasets for research papers, sentiment analysis, or machine learning experiments.
-          Save time with our automated, robust scraping capabilities.
-        </p>
-        <a href="documentation.html" class="btn secondary-btn">View Docs</a>
-      </section>
 
-      <!-- New Solution Block 4 -->
-      <section class="solution-block">
-        <div class="solution-icon">
-          <i class="fas fa-medkit"></i>
+        <!-- Solution Block 3 -->
+        <div class="solution-block">
+          <div class="solution-icon">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <h2>Research Projects</h2>
+          <p>
+            Quickly collect datasets for research, sentiment analysis, or machine learning projects using our robust scraping tools.
+          </p>
+          <a href="documentation.html" class="btn">View Docs</a>
         </div>
-        <h2>Healthcare Data Aggregation</h2>
-        <p>
-          Aggregate patient records, clinical trial data, and healthcare trends to support medical research and improve patient care.
-          Our API ensures secure and compliant data handling.
-        </p>
-        <a href="register.html" class="btn secondary-btn">Get Started</a>
-      </section>
+
+        <!-- Solution Block 4 -->
+        <div class="solution-block">
+          <div class="solution-icon">
+            <i class="fas fa-medkit"></i>
+          </div>
+          <h2>Healthcare Aggregation</h2>
+          <p>
+            Aggregate clinical trial data, patient records, or healthcare trends to support research and improve patient outcomes.
+          </p>
+          <a href="register.html" class="btn">Get Started</a>
+        </div>
+      </div>
     </div>
-
-    <!-- New Testimonials Section -->
-    <section class="testimonials-section container">
-      <h2 class="section-title">What Our Clients Say</h2>
-      <div class="testimonials-grid">
-        <div class="testimonial-card">
-          <p class="testimonial-text">
-            "ScrapeCompass has significantly streamlined our data extraction process, allowing us to focus on analysis and strategy."
-          </p>
-          <div class="testimonial-author">
-            <img src="images/user1.jpg" alt="Jane Doe" class="testimonial-avatar"/>
-            <div>
-              <h4>Jane Doe</h4>
-              <span>Data Analyst at TechCorp</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card">
-          <p class="testimonial-text">
-            "The reliability and speed of ScrapeCompass's API are unmatched. It has become an indispensable tool for our business."
-          </p>
-          <div class="testimonial-author">
-            <img src="images/user2.jpg" alt="John Smith" class="testimonial-avatar"/>
-            <div>
-              <h4>John Smith</h4>
-              <span>CTO at InnovateX</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card">
-          <p class="testimonial-text">
-            "Excellent customer support and comprehensive documentation make integrating ScrapeCompass seamless."
-          </p>
-          <div class="testimonial-author">
-            <img src="images/user3.jpg" alt="Alice Johnson" class="testimonial-avatar"/>
-            <div>
-              <h4>Alice Johnson</h4>
-              <span>Product Manager at MarketGuru</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- New Integration Partners Section -->
-    <section class="integration-section container">
-      <h2 class="section-title">Our Integration Partners</h2>
-      <div class="integration-logos">
-        <div class="integration-logo">
-          <img src="images/integration1.png" alt="Partner 1" />
-        </div>
-        <div class="integration-logo">
-          <img src="images/integration2.png" alt="Partner 2" />
-        </div>
-        <div class="integration-logo">
-          <img src="images/integration3.png" alt="Partner 3" />
-        </div>
-        <div class="integration-logo">
-          <img src="images/integration4.png" alt="Partner 4" />
-        </div>
-        <div class="integration-logo">
-          <img src="images/integration5.png" alt="Partner 5" />
-        </div>
-      </div>
-    </section>
-
-    <!-- New FAQ Section -->
-    <section class="faq-section container">
-      <h2 class="section-title">Frequently Asked Questions</h2>
-      <div class="faq-accordion">
-        <div class="faq-item">
-          <button class="faq-question">
-            What is ScrapeCompass API?
-          </button>
-          <div class="faq-answer">
-            <p>
-              ScrapeCompass API is a robust and scalable solution for extracting, transforming, and managing web data across various platforms and industries.
-            </p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            How easy is it to integrate ScrapeCompass with my existing systems?
-          </button>
-          <div class="faq-answer">
-            <p>
-              ScrapeCompass offers comprehensive documentation and support to ensure seamless integration with your current infrastructure. Our flexible API design caters to a wide range of use cases.
-            </p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            What pricing plans are available?
-          </button>
-          <div class="faq-answer">
-            <p>
-              We offer flexible pricing plans tailored to different business needs, ranging from startups to large enterprises. Visit our <a href="pricing.html">Pricing</a> page for more details.
-            </p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            Is there a free trial available?
-          </button>
-          <div class="faq-answer">
-            <p>
-              Yes, we offer a free trial period for new users to explore the features and capabilities of ScrapeCompass API. Sign up on our <a href="register.html">Registration</a> page to get started.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-    
   </main>
-  
+
   <!-- Footer -->
   <footer>
     <div class="footer-container">
@@ -262,31 +135,5 @@
       </div>
     </div>
   </footer>
-
-  <!-- JS (Optional) -->
-  <script src="js/main.js"></script>
-
-  <!-- Optional: JavaScript for FAQ Accordion -->
-  <script>
-    document.querySelectorAll('.faq-question').forEach(button => {
-      button.addEventListener('click', () => {
-        const faqItem = button.parentElement;
-        const openItem = document.querySelector('.faq-item.active');
-
-        if (openItem && openItem !== faqItem) {
-          openItem.classList.remove('active');
-          openItem.querySelector('.faq-answer').style.maxHeight = 0;
-        }
-
-        faqItem.classList.toggle('active');
-        const answer = faqItem.querySelector('.faq-answer');
-        if (faqItem.classList.contains('active')) {
-          answer.style.maxHeight = answer.scrollHeight + 'px';
-        } else {
-          answer.style.maxHeight = 0;
-        }
-      });
-    });
-  </script>
 </body>
 </html>

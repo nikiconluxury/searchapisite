@@ -2,222 +2,59 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ScrapeCompass API - Documentation</title>
 
-  <!-- Link to external CSS -->
+  <!-- External CSS -->
   <link rel="stylesheet" href="css/main.css" />
-
-  <!-- Font Awesome (Optional) -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-  />
-</head>
-
-<body>
-  <!-- Sticky Navigation Bar -->
-  <nav class="navbar">
-    <!-- Logo on the Left -->
-    <a href="index.html" class="logo">SCRAPECOMPASS</a>
-  
-    <!-- Mobile Toggle Button -->
-    <button class="mobile-toggle" aria-label="Toggle navigation" aria-expanded="false">
-      <i class="fas fa-bars"></i>
-    </button>
-  
-    <!-- Navigation Links - Center -->
-    <div class="nav-links">
-      <a href="dashboard.html" class="nav-link">API</a>
-      <a href="features.html" class="nav-link">Features</a>
-      <a href="solutions.html" class="nav-link">Solutions</a>
-      <a href="pricing.html" class="nav-link">Pricing</a>
-      <a href="documentation.html" class="nav-link">Documentation</a>
-    </div>
-
-  </nav>
-  
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <!-- Sticky Navigation Bar -->
+  <!-- Navigation Bar -->
   <nav class="navbar">
-    <!-- Logo on the Left -->
-    <a href="index.html" class="logo">SCRAPECOMPASS</a>
-  
-    <!-- Mobile Toggle Button -->
-    <button class="mobile-toggle" aria-label="Toggle navigation" aria-expanded="false">
-      <i class="fas fa-bars"></i>
-    </button>
-  
-    <!-- Navigation Links - Center -->
-    <div class="nav-links">
-      <a href="index.html" class="nav-link">API</a>
-      <a href="features.html" class="nav-link">Features</a>
-      <a href="solutions.html" class="nav-link">Solutions</a>
-      <a href="pricing.html" class="nav-link">Pricing</a>
-      <a href="documentation.html" class="nav-link">Documentation</a>
-    </div>
-    <!-- Authentication Buttons - Right -->
-    <div class="auth-buttons">
-      <a href="login.html" class="btn auth-btn login">Login</a>
+    <div class="inner-container">
+      <a href="index.html" class="logo">SCRAPECOMPASS</a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="dashboard.html" class="nav-link">Dashboard</a>
+        <a href="features.html" class="nav-link">Features</a>
+        <a href="solutions.html" class="nav-link">Solutions</a>
+        <a href="pricing.html" class="nav-link">Pricing</a>
+        <a href="documentation.html" class="nav-link">Documentation</a>
+      </div>
     </div>
   </nav>
+  
+  
+
+  <!-- Alert Box -->
+  <div id="alertBox" class="alert-box" style="display: none;">
+    <i class="icon"></i>
+    <span class="message"></span>
+    <button onclick="closeAlert()" class="close-btn">&times;</button>
+  </div>
+
+  <!-- Hero Section -->
   <section class="hero">
-    <div class="hero-content">
-      <h1>ScrapeCompass API Documentation</h1>
-      <p class="hero-subtitle">
-        Easily fetch, process, and manage web data with our RESTful API. 
-      </p>
+    <div class="inner-container">
+      <h1 class="hero-title">API Documentation</h1>
+      <p class="hero-subtitle">Learn how to integrate and use the ScrapeCompass API for your projects.</p>
     </div>
   </section>
 
-<main class="container content-left">
-  <h2>Introduction</h2>
-  <p>
-    The ScrapeCompass API simplifies web data extraction through
-    an intuitive REST interface. This documentation covers available
-    endpoints, parameters, and response formats, with real examples to help
-    you get started quickly.
-  </p>
-
-  <hr />
-
-  <h2>Authentication</h2>
-  <p>
-    All requests must include an <strong>API Key</strong> in the request header:
-  </p>
-  <pre class="code-block">
+  <!-- Documentation Content -->
+  <main class="documentation-content">
+    <div class="inner-container">
+      <h2>Getting Started</h2>
+      <p>All API requests require an API Key. Include it in the headers as follows:</p>
+      <pre class="code-block">
 Authorization: Bearer YOUR_API_KEY
-  </pre>
-
-  <hr />
-
-  <h2>Endpoints</h2>
-
-  <!-- Endpoint 1: GET /v1/data -->
-  <section>
-    <h3>1. GET /v1/data</h3>
-    <p>
-      Fetch raw HTML or processed data from the specified target URL. 
-      You can also pass query parameters to specify the <code>format</code> (e.g., JSON, CSV).
-    </p>
-    <ul>
-      <li><strong>url</strong> - The webpage you want to scrape (encoded).</li>
-      <li><strong>format</strong> - Optional. Defaults to JSON.</li>
-    </ul>
-    <pre class="code-block">
-Example:
-GET /v1/data?url=https%3A%2F%2Fwww.example.com&format=json
-Authorization: Bearer YOUR_API_KEY
-
-Response (JSON):
-{
-  "status": "success",
-  "data": "<html>...<body>Example.com content...</body></html>"
-}
-    </pre>
-  </section>
-
-  <hr />
-
-  <!-- Endpoint 2: POST /v1/extract -->
-  <section>
-    <h3>2. POST /v1/extract</h3>
-    <p>
-      Submit a more advanced extraction request with custom CSS or XPath selectors.
-      Ideal for structured data output (e.g., for e-commerce product details).
-    </p>
-    <p><strong>Request Body Fields:</strong></p>
-    <ul>
-      <li><strong>url</strong> - The target webpage URL.</li>
-      <li><strong>selectors</strong> - An array of CSS or XPath selectors.</li>
-      <li><strong>format</strong> - Output format (JSON/CSV).</li>
-    </ul>
-    <pre class="code-block">
-Example cURL:
-
-curl -X POST "https://api.ScrapeCompass.com/v1/extract" \
-     -H "Content-Type: application/json" \
-     -H "Authorization: Bearer YOUR_API_KEY" \
-     -d '{
-       "url": "https://www.example.com/product/123",
-       "selectors": ["#title", ".price", ".description"],
-       "format": "json"
-     }'
-
-Response:
-{
-  "status": "success",
-  "extracted_data": {
-    "title": "Example Product Title",
-    "price": "$19.99",
-    "description": "A short product description..."
-  }
-}
-    </pre>
-  </section>
-
-  <hr />
-
-  <!-- Endpoint 3: GET /v1/status -->
-  <section>
-    <h3>3. GET /v1/status</h3>
-    <p>
-      Retrieve your account usage stats, remaining API calls, concurrency limits,
-      and service health info.
-    </p>
-    <pre class="code-block">
-GET /v1/status
-Authorization: Bearer YOUR_API_KEY
-
-Response:
-{
-  "status": "success",
-  "account": {
-    "api_calls_used": 2000,
-    "api_calls_limit": 10000,
-    "concurrent_requests": 2
-  },
-  "service_health": {
-    "uptime_percent": "99.95%",
-    "last_incident": "2023-06-15"
-  }
-}
-    </pre>
-  </section>
-
-  <hr />
-
-  <h2>Response Formats</h2>
-  <p>
-    The API supports JSON, XML, and CSV. For large results, pagination or chunked 
-    delivery may apply. Use the <code>format</code> parameter to specify desired output.
-  </p>
-
-  <hr />
-
-  <h2>Error Handling</h2>
-  <p>
-    All error responses include a <code>status</code> field and a <code>message</code>. 
-    Common HTTP status codes:
-  </p>
-  <ul>
-    <li><strong>400 Bad Request:</strong> Missing or invalid parameters.</li>
-    <li><strong>401 Unauthorized:</strong> Invalid or missing API Key.</li>
-    <li><strong>403 Forbidden:</strong> API Key lacks permission.</li>
-    <li><strong>429 Too Many Requests:</strong> Rate limit exceeded.</li>
-    <li><strong>500 Server Error:</strong> Unexpected issue on our side.</li>
-  </ul>
-
-  <hr />
-
-  <h2>Next Steps</h2>
-  <p>
-    Explore our <a href="guides.html">Guides</a> for deeper tutorials, 
-    advanced extraction logic, and best practices to optimize your scraping workflows.
-  </p>
-</main>
-
+      </pre>
+      <button onclick="showAlert('success', 'API Key validated successfully!')">Test Success Alert</button>
+      <button onclick="showAlert('error', 'Invalid API Key. Please try again.')">Test Error Alert</button>
+      <button onclick="showAlert('info', 'Check your email for API key updates.')">Test Info Alert</button>
+    </div>
+  </main>
 
   <!-- Footer -->
   <footer>
@@ -227,9 +64,9 @@ Response:
         <ul>
           <li><a href="login.html">Login</a></li>
           <li><a href="register.html">Register</a></li>
-        <li><a href="terms-and-conditions.html">Terms and Conditions</a></li>
-        <li><a href="privacy-policy.html">Privacy Policy</a></li>
-      </ul>
+          <li><a href="terms-and-conditions.html">Terms and Conditions</a></li>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        </ul>
       </div>
       <div class="footer-section">
         <h4>Features</h4>
@@ -254,12 +91,52 @@ Response:
           <li><a href="contact.html">Contact Us</a></li>
           <li>Email: <a href="mailto:support@scrapecompass.com">support@scrapecompass.com</a></li>
           <li>Phone: <a href="tel:+18554402242">(855) 440-2242</a></li>
-        
         </ul>
       </div>
     </div>
   </footer>
 
+  <!-- Alert JavaScript -->
+  <script>
+    // Function to display alert
+    function showAlert(type, message) {
+      const alertBox = document.getElementById("alertBox");
+      const icon = alertBox.querySelector(".icon");
+      const messageSpan = alertBox.querySelector(".message");
 
+      // Set the message
+      messageSpan.innerText = message;
+
+      // Set the icon and alert style based on type
+      if (type === "success") {
+        icon.className = "icon fas fa-check-circle";
+        alertBox.style.backgroundColor = "#d4edda";
+        alertBox.style.color = "#155724";
+      } else if (type === "error") {
+        icon.className = "icon fas fa-exclamation-circle";
+        alertBox.style.backgroundColor = "#f8d7da";
+        alertBox.style.color = "#721c24";
+      } else if (type === "info") {
+        icon.className = "icon fas fa-info-circle";
+        alertBox.style.backgroundColor = "#cce5ff";
+        alertBox.style.color = "#004085";
+      }
+
+      // Show the alert
+      alertBox.style.display = "flex";
+
+      // Auto-hide the alert after 5 seconds
+      setTimeout(() => {
+        alertBox.style.display = "none";
+      }, 5000);
+    }
+
+    // Function to close alert
+    function closeAlert() {
+      const alertBox = document.getElementById("alertBox");
+      alertBox.style.display = "none";
+    }
+  </script>
 </body>
 </html>
+

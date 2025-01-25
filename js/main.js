@@ -171,3 +171,20 @@ toggleButton.addEventListener('click', () => {
   toggleButton.setAttribute('aria-expanded', !isExpanded);
   navLinks.classList.toggle('active');
 });
+function logoff() {
+  // Confirm the user wants to log off
+  const confirmation = confirm("Are you sure you want to log off?");
+  if (confirmation) {
+    // Remove token from local storage
+    localStorage.removeItem("authToken");
+
+    // Optional: Remove token from session storage if stored there
+    sessionStorage.removeItem("authToken");
+
+    // Optional: Clear cookies related to the session (if applicable)
+    document.cookie = "authToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+
+    // Redirect to the login page or homepage
+    window.location.href = "login.html"; // Adjust the redirect URL as needed
+  }
+}

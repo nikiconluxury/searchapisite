@@ -13,111 +13,103 @@
 <body>
   <!-- Navigation Bar -->
   <nav class="navbar">
-    <a href="index.html" class="logo">SCRAPECOMPASS</a>
-    <div class="nav-links">
-      <a href="dashboard.html" class="nav-link">Dashboard</a>
-      <a href="analytics.html" class="nav-link">Analytics</a>
-      <a href="billing.html" class="nav-link active">Billing</a>
-      <a href="settings.html" class="nav-link">Settings</a>
-      <a href="playground.html" class="nav-link">Playground</a>
+    <div class="inner-container">
+      <a href="index.html" class="logo">SCRAPECOMPASS</a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="dashboard.html" class="nav-link">Dashboard</a>
+        <a href="features.html" class="nav-link">Features</a>
+        <a href="solutions.html" class="nav-link">Solutions</a>
+        <a href="pricing.html" class="nav-link">Pricing</a>
+        <a href="documentation.html" class="nav-link">Documentation</a>
+      </div>
     </div>
   </nav>
+  
 
   <div class="layout">
     <!-- Sidebar -->
     <div class="sidebar">
       <h2>Navigation</h2>
       <ul>
-        <li><a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+        <li><a href="dashboard.html" ><i class="fas fa-home"></i> Dashboard</a></li>
         <li><a href="analytics.html"><i class="fas fa-chart-bar"></i> Analytics</a></li>
         <li><a href="billing.html" class="active"><i class="fas fa-file-invoice-dollar"></i> Billing</a></li>
         <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
         <li><a href="playground.html"><i class="fas fa-flask"></i> Playground</a></li>
       </ul>
       <ul>
-        <li><a onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        <li><a href="#" onclick="logout()" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
       </ul>
     </div>
-
+    
     <!-- Main Content -->
     <div class="main-content">
-      <div class="container">
-        <h1>Billing</h1>
+      <h1>Billing</h1>
 
-        <!-- Action Bar -->
-        <div class="action-bar">
-          <div>
-            <p><strong>Manage Your Billing</strong></p>
-            <p>View your invoices, payment methods, and subscription details.</p>
-          </div>
-          <div>
-            <button class="btn-primary">Add Payment Method</button>
-            <button class="btn-secondary">Upgrade Plan</button>
-          </div>
+      <!-- Billing Summary -->
+      <h2>Billing Summary</h2>
+      <div class="billing-summary">
+        <div class="billing-card">
+          <h3>Total Usage</h3>
+          <p>10,430 API Calls</p>
         </div>
-
-        <!-- Billing Summary -->
-        <h2>Billing Summary</h2>
-        <div class="billing-summary">
-          <div class="billing-card">
-            <h3>Current Plan</h3>
-            <p><strong>Pro Plan</strong></p>
-            <p>$49.99 / month</p>
-          </div>
-          <div class="billing-card">
-            <h3>Next Billing Date</h3>
-            <p><strong>February 15, 2025</strong></p>
-          </div>
+        <div class="billing-card">
+          <h3>Current Plan</h3>
+          <p>Pro Plan - $299/month</p>
         </div>
-
-        <!-- Payment History -->
-        <h2>Payment History</h2>
-        <table class="payment-history">
-          <thead>
-            <tr>
-              <th>Date</th>
-              <th>Amount</th>
-              <th>Payment Method</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>2025-01-15</td>
-              <td>$49.99</td>
-              <td>Visa Ending in 1234</td>
-              <td>Success</td>
-            </tr>
-            <tr>
-              <td>2024-12-15</td>
-              <td>$49.99</td>
-              <td>Visa Ending in 1234</td>
-              <td>Success</td>
-            </tr>
-            <tr>
-              <td>2024-11-15</td>
-              <td>$49.99</td>
-              <td>Visa Ending in 1234</td>
-              <td>Success</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <!-- Payment Methods -->
-        <h2>Payment Methods</h2>
-        <div class="payment-methods">
-          <div class="payment-method">
-            <p><strong>Visa Ending in 1234</strong></p>
-            <p>Expires 12/2025</p>
-            <button class="btn-secondary">Remove</button>
-          </div>
-          <div class="payment-method">
-            <p><strong>Mastercard Ending in 5678</strong></p>
-            <p>Expires 08/2026</p>
-            <button class="btn-secondary">Remove</button>
-          </div>
+        <div class="billing-card">
+          <h3>Next Payment</h3>
+          <p>2025-02-15</p>
         </div>
       </div>
+
+      <!-- Payment Methods -->
+      <h2>Payment Methods</h2>
+      <div class="payment-methods">
+        <div class="payment-method">
+          <p><strong>Visa **** **** **** 4242</strong> (Expires 12/25)</p>
+          <button class="btn-danger">Remove</button>
+        </div>
+        <div class="payment-method">
+          <p><strong>MasterCard **** **** **** 1234</strong> (Expires 06/27)</p>
+          <button class="btn-danger">Remove</button>
+        </div>
+        <button class="btn-primary">Add Payment Method</button>
+      </div>
+
+      <!-- Payment History -->
+      <h2>Payment History</h2>
+      <table class="payment-history">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Amount</th>
+            <th>Payment Method</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2025-01-15</td>
+            <td>$299</td>
+            <td>Visa **** 4242</td>
+            <td>Success</td>
+          </tr>
+          <tr>
+            <td>2024-12-15</td>
+            <td>$299</td>
+            <td>MasterCard **** 1234</td>
+            <td>Success</td>
+          </tr>
+          <tr>
+            <td>2024-11-15</td>
+            <td>$299</td>
+            <td>Visa **** 4242</td>
+            <td>Success</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 
@@ -159,11 +151,3 @@
       </div>
     </div>
   </footer>
-
-  <script>
-    function logout() {
-      alert("Logout functionality not implemented.");
-    }
-  </script>
-</body>
-</html>
