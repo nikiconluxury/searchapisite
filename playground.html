@@ -11,38 +11,53 @@
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-  <!-- Navigation Bar -->
+
   <nav class="navbar">
-    <div class="inner-container">
-      <a href="index.html" class="logo">SCRAPECOMPASS</a>
-      <div class="nav-links">
-        <a href="index.html" class="nav-link active">Home</a>
-        <a href="dashboard.html" class="nav-link">Dashboard</a>
-        <a href="features.html" class="nav-link">Features</a>
-        <a href="solutions.html" class="nav-link">Solutions</a>
-        <a href="pricing.html" class="nav-link">Pricing</a>
-        <a href="documentation.html" class="nav-link">Documentation</a>
-      </div>
+    <a href="index.html" class="logo">SCRAPECOMPASS</a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="dashboard.html" class="nav-link active">Dashboard</a></li>
+      <li><a href="features.html" class="nav-link">Features</a></li>
+      <li><a href="solutions.html" class="nav-link">Solutions</a></li>
+      <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+      <li><a href="documentation.html" class="nav-link">Documentation</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger">
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="dashboard.html" class="nav-link active">Dashboard</a>
+      <a href="features.html" class="nav-link">Features</a>
+      <a href="solutions.html" class="nav-link">Solutions</a>
+      <a href="pricing.html" class="nav-link">Pricing</a>
+      <a href="documentation.html" class="nav-link">Documentation</a>
     </div>
   </nav>
-  
+  <!-- Alert Box -->
+  <div id="alertBox" class="alert-box" style="display: none;">
+    <i class="icon"></i>
+    <span class="message"></span>
+    <button onclick="closeAlert()" class="close-btn">&times;</button>
+  </div>
+
 
   <div class="layout">
     <!-- Sidebar -->
     <div class="sidebar">
       <h2>Navigation</h2>
       <ul>
-        <li><a href="dashboard.html" ><i class="fas fa-home"></i> Dashboard</a></li>
+        <li><a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
         <li><a href="analytics.html"><i class="fas fa-chart-bar"></i> Analytics</a></li>
         <li><a href="billing.html"><i class="fas fa-file-invoice-dollar"></i> Billing</a></li>
         <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
         <li><a href="playground.html" class="active"><i class="fas fa-flask"></i> Playground</a></li>
+        <li><a href="exports.html"><i class="fas fa-download"></i> Exports</a></li>
       </ul>
       <ul>
         <li><a href="#" onclick="logout()" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
       </ul>
     </div>
-    
 
     <!-- Main Content -->
     <div class="main-content">
@@ -92,48 +107,140 @@
         </div>
       </div>
     </div>
+    <footer>
+      <div class="footer-container">
+        <!-- About Section -->
+        <div class="footer-section">
+          <h4>About Us</h4>
+          <p>Your trusted partner in scalable data solutions.</p>
+          <a href="about.html">Learn More</a>
+        </div>
+        
+        <!-- Quick Links Section -->
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="solutions.html">Solutions</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="documentation.html">Documentation</a></li>
+          </ul>
+        </div>
+        
+        <!-- Contact Section -->
+        <div class="footer-section">
+          <h4>Contact</h4>
+          <p>Email: <a href="mailto:support@scrapecompass.com">support@scrapecompass.com</a></p>
+          <p>Phone: +1 (555) 123-4567</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 ScrapeCompass. All Rights Reserved.</p>
+      </div>
+    </footer>  
   </div>
+ <!-- Updated Styles -->
+ <style>
+  /* Footer Styling */
+  footer {
+    background-color: #1e1e2f;
+    color: white;
+    padding: 2rem 1rem;
+  }
 
-  <!-- Footer -->
-  <footer>
-    <div class="footer-container">
-      <div class="footer-section">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="login.html">Login</a></li>
-          <li><a href="terms-and-conditions.html">Terms and Conditions</a></li>
-          <li><a href="privacy-policy.html">Privacy Policy</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h4>Features</h4>
-        <ul>
-          <li><a href="features.html">Reliable Data Extraction</a></li>
-          <li><a href="easy-integration.html">Easy Integration</a></li>
-          <li><a href="solutions.html">Scalable Solutions</a></li>
-          <li><a href="pricing.html">Flexible Pricing Plans</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h4>Documentation</h4>
-        <ul>
-          <li><a href="documentation.html">API Documentation</a></li>
-          <li><a href="guides.html">User Guides</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="about.html">Our Story</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
-          <li>Email: <a href="mailto:support@scrapecompass.com">support@scrapecompass.com</a></li>
-          <li>Phone: <a href="tel:+18554402242">(855) 440-2242</a></li>
-        </ul>
-      </div>
-    </div>
-  </footer>
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 2rem;
+  }
+
+  .footer-section {
+    flex: 1;
+    min-width: 200px;
+  }
+
+  .footer-section h4 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer-section ul li {
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-section ul li a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .footer-section ul li a:hover {
+    color: #0056b3;
+  }
+
+  .footer-section p {
+    margin-bottom: 1rem;
+  }
+
+  .social-links a {
+    color: white;
+    margin-right: 10px;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+  }
+
+  .social-links a:hover {
+    color: #007bff;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    border-top: 1px solid #444;
+    padding-top: 1rem;
+  }
+</style>
+
+<!-- Scripts -->
+<script>
+  function handleError(message) {
+    triggerAlert("error", message);
+  }
+  // Logout Function
+
+  // Logout Function
+  function logout() {
+    try {
+      triggerAlert("info", "Logged out successfully!");
+      setTimeout(() => {
+        // Simulate logout and redirect
+        window.location.href = "login.html";
+      }, 2000);
+    } catch (error) {
+      triggerAlert("error", "Logout failed. Please try again.");
+    }
+  }
+</script>
+
+
 
   <script>
+
+    // Form Submission
     const form = document.getElementById("api-test-form");
     const responseViewer = document.getElementById("response-viewer");
     const resetButton = document.getElementById("reset-fields");
@@ -152,19 +259,42 @@
           body: method !== "GET" ? payload : null,
         });
 
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
         const data = await response.json();
         responseViewer.innerText = JSON.stringify(data, null, 2);
+        triggerAlert("success", "Request sent successfully!");
       } catch (error) {
         responseViewer.innerText = `Error: ${error.message}`;
+        triggerAlert("error", `Failed to send request: ${error.message}`);
       }
     });
 
+    // Reset Button
     resetButton.addEventListener("click", () => {
-      document.getElementById("endpoint-menu").value = "https://api.example.com/users";
+      document.getElementById("endpoint-menu").value = "https://https://solid-doodle-wrrrg7gqj56x259pj-8000.app.github.dev/users";
       document.getElementById("request-method").value = "GET";
       document.getElementById("payload").value = "";
       responseViewer.innerText = "Response will appear here...";
+      triggerAlert("info", "Fields have been reset.");
     });
+    // Logout Function
+    function logout() {
+      try {
+        triggerAlert("info", "Logged out successfully!");
+        setTimeout(() => {
+          // Simulate logout and redirect
+          window.location.href = "login.html";
+        }, 2000);
+      } catch (error) {
+        triggerAlert("error", "Logout failed. Please try again.");
+      }
+    }
   </script>
+      <script src="js/auth.js"></script>
+      <script src="js/main.js"></script>
+      <script src="js/alert.js"></script>
 </body>
 </html>

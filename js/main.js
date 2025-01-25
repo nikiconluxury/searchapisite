@@ -29,6 +29,13 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     });
   }
 
+// JavaScript for Hamburger Menu Toggle
+const hamburger = document.getElementById("hamburger");
+const mobileMenu = document.getElementById("mobileMenu");
+
+hamburger.addEventListener("click", () => {
+  mobileMenu.classList.toggle("show"); // Toggle visibility of the mobile menu
+});
 
   const API_URL = "https://solid-doodle-wrrrg7gqj56x259pj-8000.app.github.dev";
   // Toggle Functions
@@ -120,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
       content.style.height = 'auto';
       if (content.scrollHeight > maxHeight) {
         maxHeight = content.scrollHeight;
-      }
+      } 
     });
     
     // Set fixed max-height based on the tallest content
@@ -132,7 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
 setAccordionFixedHeight();
 let resizeTimeout;
-window.addEventListener('resize', () => {
+window.addEventListener('resize', () => {                     
   clearTimeout(resizeTimeout);
   resizeTimeout = setTimeout(setAccordionFixedHeight, 200);
 });
@@ -163,28 +170,4 @@ window.addEventListener('resize', () => {
     });
   });
 });
-const toggleButton = document.querySelector('.mobile-toggle');
-const navLinks = document.querySelector('.nav-links');
-
-toggleButton.addEventListener('click', () => {
-  const isExpanded = toggleButton.getAttribute('aria-expanded') === 'true';
-  toggleButton.setAttribute('aria-expanded', !isExpanded);
-  navLinks.classList.toggle('active');
-});
-function logoff() {
-  // Confirm the user wants to log off
-  const confirmation = confirm("Are you sure you want to log off?");
-  if (confirmation) {
-    // Remove token from local storage
-    localStorage.removeItem("authToken");
-
-    // Optional: Remove token from session storage if stored there
-    sessionStorage.removeItem("authToken");
-
-    // Optional: Clear cookies related to the session (if applicable)
-    document.cookie = "authToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-
-    // Redirect to the login page or homepage
-    window.location.href = "login.html"; // Adjust the redirect URL as needed
-  }
-}
+                         

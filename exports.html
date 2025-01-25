@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ScrapeCompass - Billing</title>
+  <title>ScrapeCompass - Exports</title>
 
   <link
     rel="stylesheet"
@@ -11,15 +11,13 @@
   />
   <link rel="stylesheet" href="css/main.css">
   <style>
-    .payment-methods {
-      margin: 20px 0;
-      padding: 20px;
-      border: 1px solid #e0e0e0;
-      border-radius: 8px;
-      background-color: #f9f9f9;
+    .export-list {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
     }
 
-    .payment-method {
+    .export-list li {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -31,29 +29,44 @@
       transition: box-shadow 0.3s ease;
     }
 
-    .payment-method:hover {
+    .export-list li:hover {
       box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     }
 
-    .payment-method p {
-      margin: 0;
-    }
-
-    .payment-method button {
+    .export-list button {
       padding: 5px 10px;
       border: none;
       border-radius: 4px;
-      background: #ff4d4f;
+      background: #007bff;
       color: #ffffff;
       cursor: pointer;
       transition: background 0.3s ease;
     }
 
-    .payment-method button:hover {
-      background: #d9363e;
+    .export-list button:hover {
+      background: #0056b3;
     }
 
-  </style>
+.action-bar button {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.action-bar button:hover {
+  background-color: #0056b3;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+</style>
+   
 </head>
 <body>
   <!-- Navbar -->
@@ -85,43 +98,41 @@
     <span class="message"></span>
     <button onclick="closeAlert()" class="close-btn">&times;</button>
   </div>
+  <!-- Sidebar -->
   <div class="layout">
-    <!-- Sidebar -->
     <div class="sidebar">
       <h2>Navigation</h2>
       <ul>
         <li><a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
-        <li><a href="analytics.html" ><i class="fas fa-chart-bar"></i> Analytics</a></li>
-        <li><a href="billing.html" class="active"><i class="fas fa-file-invoice-dollar"></i> Billing</a></li>
-        <li><a href="settings.html" ><i class="fas fa-cog"></i> Settings</a></li>
+        <li><a href="analytics.html"><i class="fas fa-chart-bar"></i> Analytics</a></li>
+        <li><a href="billing.html"><i class="fas fa-file-invoice-dollar"></i> Billing</a></li>
+        <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
         <li><a href="playground.html"><i class="fas fa-flask"></i> Playground</a></li>
-        <li><a href="exports.html"><i class="fas fa-download"></i> Exports</a></li>
+        <li><a href="exports.html" class="active"><i class="fas fa-download"></i> Exports</a></li>
       </ul>
       <ul>
         <li><a href="#" onclick="logout()" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
       </ul>
     </div>
+    
 
-  <div class="main-content">
-    <!-- Action Bar -->     
-    <div>
-      <h2>Billing!</h2>
-      <p>View key insights and manage your account.</p>
-    </div>
-
-      <div class="action-bar">
-        <div>
-          <p><strong>Analyze Your Usage</strong></p>
-          <p>Export reports, monitor metrics, and track user activity in real-time.</p>
-        </div>
-        <div>
-          <button class="btn-primary" onclick="handleAction('Export Data', 'Starting data export...')">Export Data</button>
-          <button class="btn-secondary" onclick="handleAction('Generate Report', 'Generating report...')">Generate Report</button>
-          <button class="btn-secondary" onclick="handleAction('Share Analytics', 'Sharing analytics...')">Share Analytics</button>
-        </div>
-      </div>
-
-
+    <!-- Main Content -->
+    <div class="main-content">
+        <h2>Exports</h2>
+        <p>Download various data exports.</p>
+        <div class="action-bar">
+            <div>
+              <p><strong>Analyze Your Usage</strong></p>
+              <p>Export reports, monitor metrics, and track user activity in real-time.</p>
+            </div>
+            <div>
+                <button onclick="downloadExport('csv')">Download CSV</button>
+                <button onclick="downloadExport('xlsx')">Download Excel</button>
+                <button onclick="downloadExport('json')">Download JSON</button>
+                <button onclick="downloadAll()">Export All</button>
+            </div>
+          </div>
+          
       <!-- Analytics Overview -->
       <div class="top-cards">
         <div class="card">
@@ -137,62 +148,23 @@
           <p id="active-products">15</p>
         </div>
       </div>
-
-      <!-- Payment Methods -->
-      <h2>Payment Methods</h2>
-      <div class="payment-methods">
-        <div class="payment-method">
-          <p><strong>Visa **** **** **** 4242</strong> (Expires 12/25)</p>
-          <button onclick="handleError('Failed to remove Visa card')">Remove</button>
-        </div>
-        <div class="payment-method">
-          <p><strong>MasterCard **** **** **** 1234</strong> (Expires 06/27)</p>
-          <button onclick="handleError('Failed to remove MasterCard')">Remove</button>
-        </div>
-        <button class="btn-primary" onclick="triggerAlert('info', 'Add Payment Method feature coming soon!')">Add Payment Method</button>
+  
+        <!-- Export List -->
+        <ul class="export-list">
+          <li>
+            <span>Export User Data</span>
+            <button onclick="downloadExport('user_data.csv', 'User data downloaded successfully!')">Download</button>
+          </li>
+          <li>
+            <span>Export API Logs</span>
+            <button onclick="downloadExport('api_logs.csv', 'API logs downloaded successfully!')">Download</button>
+          </li>
+          <li>
+            <span>Export Billing Records</span>
+            <button onclick="downloadExport('billing_records.csv', 'Billing records downloaded successfully!')">Download</button>
+          </li>
+        </ul>
       </div>
-
-  <!-- Chart Section -->
-  <h2>Activity Over Time</h2>
-  <div class="chart-container">
-    <canvas id="activityChart"></canvas>
-  </div>
-
-  <!-- Logs Table -->
-  <h2>Recent Events</h2>
-  <table class="log-table">
-    <thead>
-      <tr>
-        <th>Date</th>
-        <th>Event</th>
-        <th>User</th>
-        <th>Details</th>
-      </tr>
-    </thead>
-    <tbody id="logs-table-body">
-      <tr>
-        <td>2025-01-20</td>
-        <td>Login</td>
-        <td>John Doe</td>
-        <td>Success</td>
-      </tr>
-      <tr>
-        <td>2025-01-19</td>
-        <td>API Request</td>
-        <td>Jane Smith</td>
-        <td>Data Extraction</td>
-      </tr>
-      <tr>
-        <td>2025-01-18</td>
-        <td>Logout</td>
-        <td>John Doe</td>
-        <td>Success</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-
   <!-- Footer -->
   <footer>
     <div class="footer-container">
@@ -230,9 +202,8 @@
       <p>&copy; 2025 ScrapeCompass. All Rights Reserved.</p>
     </div>
   </footer>
-</div>  
-  <!-- Updated Styles -->
-  <style>
+</div>
+<style>  <style>
     /* Footer Styling */
     footer {
       background-color: #1e1e2f;
@@ -299,80 +270,50 @@
       margin-top: 2rem;
       border-top: 1px solid #444;
       padding-top: 1rem;
-    }
-</style>
-
-<script>
-
-// Function to handle button actions
-function handleAction(action, message) {
-  try {
-    triggerAlert("info", message); // Show an informational alert
-    setTimeout(() => {
-      // Simulate success or failure with a random outcome
-      if (Math.random() > 0.5) {
-        triggerAlert("success", `${action} completed successfully!`);
-      } else {
-        throw new Error(`${action} failed.`);
-      }
-    }, 2000); // Simulate an action delay of 2 seconds
-  } catch (error) {
-    triggerAlert("error", error.message); // Display error alert
-  }
-}
-
-  // Hamburger Menu Toggle
-  const hamburger = document.getElementById("hamburger");
-  const mobileMenu = document.getElementById("mobileMenu");
-
-  hamburger.addEventListener("click", () => {
-    mobileMenu.classList.toggle("show");
-  });
-    function handleError(message) {
-      triggerAlert("error", message);
-    }
-    // Logout Function
-
-    // Chart Initialization
-    const ctxActivity = document.getElementById("activityChart").getContext("2d");
-    new Chart(ctxActivity, {
-      type: "line",
-      data: {
-        labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-        datasets: [
-          {
-            label: "Sessions",
-            data: [100, 150, 200, 250, 300, 350, 400],
-            backgroundColor: "rgba(0, 123, 255, 0.5)",
-            borderColor: "rgba(0, 123, 255, 1)",
-            fill: true,
-          },
-        ],
-      },
-    });
-
-    function handleError(message) {
-      triggerAlert("error", message);
-    }
-    // Logout Function
-
-    // Logout Function
-    function logout() {
+    }</style>
+  <!-- Scripts -->
+  <script>
+    function downloadExport(format) {
       try {
-        triggerAlert("info", "Logged out successfully!");
-        setTimeout(() => {
-          // Simulate logout and redirect
-          window.location.href = "login.html";
-        }, 2000);
+        const filename = `sample_export.${format}`;
+        const blob = new Blob([`Sample ${format} data`], { type: `application/${format}` });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = filename;
+        link.click();
+        URL.revokeObjectURL(url);
+        triggerAlert("success",`${format.toUpperCase()} file downloaded successfully!`);
       } catch (error) {
-        triggerAlert("error", "Logout failed. Please try again.");
+        triggerAlert("error",`Error downloading the file: ${error.message}`);
       }
     }
+
+    function downloadAll() {
+      try {
+        triggerAlert("All exports are being downloaded.", "info");
+        ["csv", "xlsx", "json"].forEach(format => {
+          setTimeout(() => downloadExport(format), 1000);
+        });
+      } catch (error) {
+        triggerAlert("error","Error downloading all files.");
+      }
+    }
+
+  function logout() {
+    try {
+      triggerAlert("info", "Logged out successfully!");
+      setTimeout(() => {
+        // Simulate logout and redirect
+        window.location.href = "login.html";
+      }, 2000);
+    } catch (error) {
+      triggerAlert("error", "Logout failed. Please try again.");
+    }
+  }
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="js/auth.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/alert.js"></script>
+      <script src="js/auth.js"></script>
+      <script src="js/main.js"></script>
+      <script src="js/alert.js"></script>
 </body>
 </html>
-

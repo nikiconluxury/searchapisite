@@ -16,17 +16,34 @@
 </head>
 <body>
   <!-- Navigation Bar -->
+  <!-- Navbar -->
   <nav class="navbar">
-    <div class="inner-container">
-      <a href="index.html" class="logo">SCRAPECOMPASS</a>
-      <div class="nav-links">
-        <a href="index.html" class="nav-link active">Home</a>
-        <a href="dashboard.html" class="nav-link">Dashboard</a>
-        <a href="features.html" class="nav-link">Features</a>
-        <a href="solutions.html" class="nav-link">Solutions</a>
-        <a href="pricing.html" class="nav-link">Pricing</a>
-        <a href="documentation.html" class="nav-link">Documentation</a>
-      </div>
+    <!-- Logo -->
+    <a href="index.html" class="logo">SCRAPECOMPASS</a>
+  
+    <!-- Desktop Navigation Links -->
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="dashboard.html" class="nav-link active">Dashboard</a></li>
+      <li><a href="features.html" class="nav-link">Features</a></li>
+      <li><a href="solutions.html" class="nav-link">Solutions</a></li>
+      <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+      <li><a href="documentation.html" class="nav-link">Documentation</a></li>
+    </ul>
+  
+    <!-- Hamburger Menu for Mobile -->
+    <button class="hamburger" id="hamburger">
+      <i class="fas fa-bars"></i>
+    </button>
+  
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="dashboard.html" class="nav-link active">Dashboard</a>
+      <a href="features.html" class="nav-link">Features</a>
+      <a href="solutions.html" class="nav-link">Solutions</a>
+      <a href="pricing.html" class="nav-link">Pricing</a>
+      <a href="documentation.html" class="nav-link">Documentation</a>
     </div>
   </nav>
 
@@ -70,9 +87,7 @@
           />
           <button type="submit" class="primary-btn">Login</button>
         </form>
-        <p>
-          Don't have an account? <a href="#" onclick="toggleToRegister()">Register here</a>.
-        </p>
+        <p>Don't have an account? <a href="#" onclick="toggleToRegister()">Register here</a>.</p>
       </div>
 
       <!-- Register Form -->
@@ -131,180 +146,20 @@
     </div>
   </footer>
 
-  <!-- Script Section -->
+  <!-- Scripts -->
+  <script src="js/auth.js"></script>
+  <script src="js/alert.js"></script>
   <script>
-    // Show Alert
-    function showAlert(status, message) {
-      const alertBox = document.getElementById("alertBox");
-      const icon = alertBox.querySelector(".icon");
-      const messageSpan = alertBox.querySelector(".message");
-
-      messageSpan.innerText = message;
-
-      alertBox.className = `alert-box ${status}`;
-      icon.className = status === "success" ? "icon fas fa-check-circle" : "icon fas fa-exclamation-circle";
-      alertBox.style.display = "flex";
-
-      setTimeout(() => {
-        alertBox.style.display = "none";
-      }, 5000);
-    }
-
-    // Close Alert
-    function closeAlert() {
-      document.getElementById("alertBox").style.display = "none";
-    }
-
-    // Toggle Between Login and Register
-    function toggleToLogin() {
-      document.getElementById("login-form").style.display = "block";
-      document.getElementById("register-form").style.display = "none";
-    }
-
+    // Toggle to Register Form
     function toggleToRegister() {
       document.getElementById("login-form").style.display = "none";
       document.getElementById("register-form").style.display = "block";
     }
 
-    // Login Function
-    async function loginUser(event) {
-      event.preventDefault();
-      const username = document.getElementById("login-username").value;
-      const password = document.getElementById("login-password").value;
-
-      try {
-        const response = await fetch(`${API_URL}/token`, {
-          method: "POST",
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: new URLSearchParams({ username, password }),
-        });
-
-        if (response.ok) {
-          const data = await response.json();
-          localStorage.setItem("access_token", data.access_token);
-          showAlert("success", "Login successful! Redirecting...");
-          setTimeout(() => window.location.href = "dashboard.html", 2000);
-        } else {
-          throw new Error("Invalid username or password");
-        }
-      } catch (error) {
-        showAlert("error", error.message);
-      }
-    }
-
-    // Register Function
-    async function registerUser(event) {
-      event.preventDefault();
-      const username = document.getElementById("register-username").value;
-      const password = document.getElementById("register-password").value;
-
-      try {
-        const response = await fetch(`${API_URL}/register`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ username, password }),
-        });
-
-        if (response.ok) {
-          showAlert("success", "Registration successful! Redirecting to login...");
-          setTimeout(toggleToLogin, 2000);
-        } else {
-          const errorData = await response.json();
-          throw new Error(errorData.detail || "Registration failed");
-        }
-      } catch (error) {
-        showAlert("error", error.message);
-      }
-    }
-  </script>
-
-
-  <!-- Script Section -->
-  <script>
-
-
-    // Show Alert
-    function showAlert(status, message) {
-      const alertBox = document.getElementById("alertBox");
-      const icon = alertBox.querySelector(".icon");
-      const messageSpan = alertBox.querySelector(".message");
-
-      messageSpan.innerText = message;
-
-      alertBox.className = `alert-box ${status}`;
-      icon.className = status === "success" ? "icon fas fa-check-circle" : "icon fas fa-exclamation-circle";
-      alertBox.style.display = "flex";
-
-      setTimeout(() => {
-        alertBox.style.display = "none";
-      }, 5000);
-    }
-
-    // Close Alert
-    function closeAlert() {
-      document.getElementById("alertBox").style.display = "none";
-    }
-
-    // Toggle Between Login and Register
+    // Toggle to Login Form
     function toggleToLogin() {
-      document.getElementById("login-form").style.display = "block";
       document.getElementById("register-form").style.display = "none";
-    }
-
-    function toggleToRegister() {
-      document.getElementById("login-form").style.display = "none";
-      document.getElementById("register-form").style.display = "block";
-    }
-    const API_URL = "https://solid-doodle-wrrrg7gqj56x259pj-8000.app.github.dev";
-    // Login Function
-    async function loginUser(event) {
-      event.preventDefault();
-      const username = document.getElementById("login-username").value;
-      const password = document.getElementById("login-password").value;
-
-      try {
-        const response = await fetch(`${API_URL}/token`, {
-          method: "POST",
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: new URLSearchParams({ username, password }),
-        });
-
-        if (response.ok) {
-          const data = await response.json();
-          localStorage.setItem("access_token", data.access_token);
-          showAlert("success", "Login successful! Redirecting...");
-          setTimeout(() => window.location.href = "dashboard.html", 2000);
-        } else {
-          throw new Error("Invalid username or password");
-        }
-      } catch (error) {
-        showAlert("error", error.message);
-      }
-    }
-
-    // Register Function
-    async function registerUser(event) {
-      event.preventDefault();
-      const username = document.getElementById("register-username").value;
-      const password = document.getElementById("register-password").value;
-
-      try {
-        const response = await fetch(`${API_URL}/register`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ username, password }),
-        });
-
-        if (response.ok) {
-          showAlert("success", "Registration successful! Redirecting to login...");
-          setTimeout(toggleToLogin, 2000);
-        } else {
-          const errorData = await response.json();
-          throw new Error(errorData.detail || "Registration failed");
-        }
-      } catch (error) {
-        showAlert("error", error.message);
-      }
+      document.getElementById("login-form").style.display = "block";
     }
   </script>
 </body>

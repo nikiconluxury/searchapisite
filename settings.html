@@ -13,20 +13,34 @@
 <body>
   <!-- Navigation Bar -->
   <nav class="navbar">
-    <div class="inner-container">
-      <a href="index.html" class="logo">SCRAPECOMPASS</a>
-      <div class="nav-links">
-        <a href="index.html" class="nav-link active">Home</a>
-        <a href="dashboard.html" class="nav-link">Dashboard</a>
-        <a href="features.html" class="nav-link">Features</a>
-        <a href="solutions.html" class="nav-link">Solutions</a>
-        <a href="pricing.html" class="nav-link">Pricing</a>
-        <a href="documentation.html" class="nav-link">Documentation</a>
-      </div>
+    <a href="index.html" class="logo">SCRAPECOMPASS</a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="dashboard.html" class="nav-link active">Dashboard</a></li>
+      <li><a href="features.html" class="nav-link">Features</a></li>
+      <li><a href="solutions.html" class="nav-link">Solutions</a></li>
+      <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+      <li><a href="documentation.html" class="nav-link">Documentation</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger">
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="dashboard.html" class="nav-link active">Dashboard</a>
+      <a href="features.html" class="nav-link">Features</a>
+      <a href="solutions.html" class="nav-link">Solutions</a>
+      <a href="pricing.html" class="nav-link">Pricing</a>
+      <a href="documentation.html" class="nav-link">Documentation</a>
     </div>
   </nav>
-  
 
+
+  <div id="alertBox" class="alert-box" style="display: none;">
+    <i class="icon"></i>
+    <span class="message"></span>
+    <button onclick="closeAlert()" class="close-btn">&times;</button>
+  </div>
   <div class="layout">
     <!-- Sidebar -->
     <div class="sidebar">
@@ -37,12 +51,13 @@
         <li><a href="billing.html"><i class="fas fa-file-invoice-dollar"></i> Billing</a></li>
         <li><a href="settings.html" class="active"><i class="fas fa-cog"></i> Settings</a></li>
         <li><a href="playground.html"><i class="fas fa-flask"></i> Playground</a></li>
+        <li><a href="exports.html"><i class="fas fa-download"></i> Exports</a></li>
       </ul>
       <ul>
         <li><a href="#" onclick="logout()" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
       </ul>
     </div>
-    
+
     <!-- Main Content -->
     <div class="main-content">
       <h1>Settings</h1>
@@ -54,26 +69,37 @@
           <p>Customize your account, preferences, and access API key tools.</p>
         </div>
         <div>
-          <button class="btn-primary">Save Changes</button>
-          <button class="btn-secondary">Reset Settings</button>
+<!-- Save Changes -->
+<button class="btn-primary" onclick="triggerAlert('success', 'Settings saved successfully!')">Save Changes</button>
+<button class="btn-secondary" onclick="triggerAlert('info', 'Settings have been reset to default.')">Reset Settings</button>
         </div>
       </div>
 
-      <!-- API Key Management -->
+      <!-- User Overview -->
+      <div class="settings-section">
+        <h2>User Overview</h2>
+        <p>Here are your account details:</p>
+        <ul>
+          <li><strong>Username:</strong> JohnDoe</li>
+          <li><strong>Email:</strong> johndoe@example.com</li>
+          <li><strong>Role:</strong> Admin</li>
+          <li><strong>Joined:</strong> 2023-01-01</li>
+        </ul>
+      </div>
+
       <div class="settings-section">
         <h2>API Key Management</h2>
         <p>Manage your API keys below:</p>
         <div class="api-key-container">
           <input id="api-key" class="api-key-input" value="Your_API_Key_Here" readonly>
-          <button class="copy-btn" onclick="copyApiKey()">Copy</button>
-          <button class="copy-btn" onclick="generateApiKey()">Generate</button>
+          <button class="copy-btn" onclick="triggerAlert('success', 'API Key copied to clipboard!')">Copy</button>
+          <button class="copy-btn" onclick="triggerAlert('info', 'A new API key has been generated!')">Generate</button>
         </div>
       </div>
-
-      <!-- Email Preferences -->
+      
       <div class="settings-section">
         <h2>Email Preferences</h2>
-        <form id="email-form">
+        <form id="email-form" onsubmit="event.preventDefault(); triggerAlert('success', 'Email preferences updated!')">
           <label for="primary-email">Primary Email</label>
           <input type="email" id="primary-email" placeholder="Enter your primary email" required>
           <div class="styled-checkbox">
@@ -83,91 +109,230 @@
           <button type="submit">Save Preferences</button>
         </form>
       </div>
-
-      <!-- User Management -->
+      
       <div class="settings-section">
-        <h2>User Management</h2>
-        <form id="user-form">
-          <label for="username">Username</label>
-          <input type="text" id="username" placeholder="Enter username" required>
-          <label for="user-role">User Role</label>
-          <select id="user-role">
-            <option value="admin">Admin</option>
-            <option value="editor">Editor</option>
-            <option value="viewer">Viewer</option>
-          </select>
-          <div class="styled-checkbox">
-            <input type="checkbox" id="deactivate-user">
-            <label for="deactivate-user">Deactivate User</label>
-          </div>
-          <button type="submit">Update User</button>
+        <h2>Change Password</h2>
+        <form id="password-form" onsubmit="event.preventDefault(); triggerAlert('error', 'Password change failed. Try again.')">
+          <label for="current-password">Current Password</label>
+          <input type="password" id="current-password" placeholder="Enter current password" required>
+          <label for="new-password">New Password</label>
+          <input type="password" id="new-password" placeholder="Enter new password" required>
+          <button type="submit">Update Password</button>
         </form>
       </div>
-
-      <!-- User Details Section -->
-      <div class="settings-section">
-        <h2>User Details</h2>
-        <p>Summary of user and team data:</p>
-        <ul>
-          <li><strong>Name:</strong> John Doe</li>
-          <li><strong>Role:</strong> Admin</li>
-          <li><strong>Team:</strong> Development</li>
-        </ul>
-      </div>
+     <!-- Footer -->
     </div>
-  </div>
-
-  <!-- Footer -->
   <footer>
     <div class="footer-container">
+      <!-- About Section -->
       <div class="footer-section">
-        <h4>Company</h4>
+        <h4>About Us</h4>
+        <p>Your trusted partner in scalable data solutions.</p>
+        <a href="about.html">Learn More</a>
+      </div>
+      
+      <!-- Quick Links Section -->
+      <div class="footer-section">
+        <h4>Quick Links</h4>
         <ul>
-          <li><a href="login.html">Login</a></li>
-          <li><a href="terms-and-conditions.html">Terms and Conditions</a></li>
-          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="features.html">Features</a></li>
+          <li><a href="solutions.html">Solutions</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="documentation.html">Documentation</a></li>
         </ul>
       </div>
-      <div class="footer-section">
-        <h4>Features</h4>
-        <ul>
-          <li><a href="features.html">Reliable Data Extraction</a></li>
-          <li><a href="easy-integration.html">Easy Integration</a></li>
-          <li><a href="solutions.html">Scalable Solutions</a></li>
-          <li><a href="pricing.html">Flexible Pricing Plans</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h4>Documentation</h4>
-        <ul>
-          <li><a href="documentation.html">API Documentation</a></li>
-          <li><a href="guides.html">User Guides</a></li>
-        </ul>
-      </div>
+      
+      <!-- Contact Section -->
       <div class="footer-section">
         <h4>Contact</h4>
-        <ul>
-          <li><a href="about.html">Our Story</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
-          <li>Email: <a href="mailto:support@scrapecompass.com">support@scrapecompass.com</a></li>
-          <li>Phone: <a href="tel:+18554402242">(855) 440-2242</a></li>
-        </ul>
+        <p>Email: <a href="mailto:support@scrapecompass.com">support@scrapecompass.com</a></p>
+        <p>Phone: +1 (555) 123-4567</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
       </div>
     </div>
-  </footer>
+    <div class="footer-bottom">
+      <p>&copy; 2025 ScrapeCompass. All Rights Reserved.</p>
+    </div>
+  </footer>  
 
   <script>
-    function copyApiKey() {
-      const apiKeyInput = document.getElementById("api-key");
-      apiKeyInput.select();
-      document.execCommand("copy");
-      alert("API Key copied to clipboard!");
+    // Trigger Alert Function
+
+    // Reset Settings Functionality
+    function resetSettings() {
+      try {
+        document.getElementById("primary-email").value = "";
+        document.getElementById("email-notifications").checked = false;
+        triggerAlert("info", "Settings reset to default.");
+      } catch (error) {
+        triggerAlert("error", "Failed to reset settings.");
+      }
     }
 
+    // Copy API Key
+    function copyApiKey() {
+      try {
+        const apiKeyInput = document.getElementById("api-key");
+        navigator.clipboard.writeText(apiKeyInput.value).then(
+          () => triggerAlert("success", "API Key copied to clipboard!"),
+          () => triggerAlert("error", "Failed to copy API Key!")
+        );
+      } catch (error) {
+        triggerAlert("error", "An error occurred while copying API Key.");
+      }
+    }
+
+    // Generate API Key
     function generateApiKey() {
-      document.getElementById("api-key").value = "NEW_GENERATED_API_KEY";
-      alert("New API Key generated!");
+      try {
+        const newKey = `NEW_API_KEY_${Date.now()}`;
+        document.getElementById("api-key").value = newKey;
+        triggerAlert("success", "New API Key generated successfully!");
+      } catch (error) {
+        triggerAlert("error", "Failed to generate API Key.");
+      }
+    }
+
+    // Update Email Preferences
+    function updateEmailPreferences(event) {
+      event.preventDefault();
+      try {
+        const email = document.getElementById("primary-email").value;
+        const notificationsEnabled = document.getElementById("email-notifications").checked;
+
+        if (!email) throw new Error("Email is required.");
+
+        triggerAlert(
+          "success",
+          `Email preferences updated. Notifications: ${notificationsEnabled ? "Enabled" : "Disabled"}`
+        );
+      } catch (error) {
+        triggerAlert("error", error.message);
+      }
+    }
+
+    // Update Password Functionality
+    function updatePassword(event) {
+      event.preventDefault();
+      try {
+        const currentPassword = document.getElementById("current-password").value;
+        const newPassword = document.getElementById("new-password").value;
+        const confirmPassword = document.getElementById("confirm-password").value;
+
+        if (!currentPassword || !newPassword || !confirmPassword) {
+          throw new Error("All password fields are required.");
+        }
+
+        if (newPassword !== confirmPassword) {
+          throw new Error("New passwords do not match.");
+        }
+
+        triggerAlert("success", "Password updated successfully!");
+      } catch (error) {
+        triggerAlert("error", error.message);
+      }
+    }
+
+  </script>
+
+  <!-- Updated Styles -->
+  <style>
+    /* Footer Styling */
+    footer {
+      background-color: #1e1e2f;
+      color: white;
+      padding: 2rem 1rem;
+    }
+
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 0 auto;
+      gap: 2rem;
+    }
+
+    .footer-section {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .footer-section h4 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .footer-section ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-section ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-section ul li a {
+      color: #007bff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-section ul li a:hover {
+      color: #0056b3;
+    }
+
+    .footer-section p {
+      margin-bottom: 1rem;
+    }
+
+    .social-links a {
+      color: white;
+      margin-right: 10px;
+      font-size: 1.2rem;
+      transition: color 0.3s ease;
+    }
+
+    .social-links a:hover {
+      color: #007bff;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 2rem;
+      border-top: 1px solid #444;
+      padding-top: 1rem;
+    }
+</style>
+
+  <!-- Scripts -->
+  <script>
+    function handleError(message) {
+      triggerAlert("error", message);
+    }
+    // Logout Function
+
+    // Logout Function
+    function logout() {
+      try {
+        triggerAlert("info", "Logged out successfully!");
+        setTimeout(() => {
+          // Simulate logout and redirect
+          window.location.href = "login.html";
+        }, 2000);
+      } catch (error) {
+        triggerAlert("error", "Logout failed. Please try again.");
+      }
     }
   </script>
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/alert.js"></script>
 </body>
 </html>
+
